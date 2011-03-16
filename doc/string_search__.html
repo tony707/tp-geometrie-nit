@@ -1,0 +1,366 @@
+<html><head><title>Module string_search</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="string_search.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module string_search</h1>
+<dl><a href="standard.html">standard</a>::<br/>module <b>string_search</b><br/>
+<dt>Imported modules: <dd><a href="string.html">string</a>
+</dl>
+<pre> This module is about string search and matching.
+ It includes some good features
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of string_search</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_BM_Pattern">BM_Pattern</a></b><br/> BM_Pattern are precompiled string motif for the Boyer-Moore Fast String Searching Algorithm
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Match">Match</a></b><br/> Matches are a part of a string.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Pattern">Pattern</a></b><br/> Patterns are string motifs.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="string.html">string</a>::</td><td><b><a href="#CLASS_String">String</a></b><br/>&nbsp;</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of string_search</big></th><tr>
+</table>
+<a name="CLASS_BM_Pattern"></a><h2>BM_Pattern</h2><small>string_search::</small><br/>class <b>BM_Pattern</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Pattern">Pattern</a>
+<dt>All superclasses: <dd><a href="#CLASS_Pattern">Pattern</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> BM_Pattern are precompiled string motif for the Boyer-Moore Fast String Searching Algorithm
+ (cf. A Fast String Searching Algorithm, with R.S. Boyer.
+ Communications of the Association for Computing Machinery, 20(10), 1977, pp. 762-772.)
+ see also http://www.cs.utexas.edu/users/moore/best-ideas/string-searching/index.html
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of BM_Pattern</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_BM_Pattern_init">init</a></b>(<a href="#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Compile a new motif 
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of BM_Pattern</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_BM_Pattern_bc">bc</a></b>(<a href="kernel.html#CLASS_Char">Char</a>): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_BM_Pattern_compute_bc">compute_bc</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_BM_Pattern_compute_gs">compute_gs</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Pattern">Pattern</a>::</td><td><b><a href="#PROP_BM_Pattern_search_in">search_in</a></b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match<br/>&nbsp;&nbsp;&nbsp;&nbsp; boyer-moore search. Return null if not found 
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Pattern">Pattern</a>::</td><td><b><a href="#PROP_BM_Pattern_search_index_in">search_index_in</a></b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; boyer-moore search gives the position of the first occurence of a pattern starting at position `from'
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_BM_Pattern_suffixes">suffixes</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="kernel.html#CLASS_Int">Int</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Pattern">Pattern</a></small></td><td><small><a href="#PROP_Pattern_search_all_in">search_all_in</a>, <a href="#PROP_Pattern_search_in">search_in</a>, <a href="#PROP_Pattern_search_index_in">search_index_in</a>, <a href="#PROP_Pattern_split_in">split_in</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of BM_Pattern</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_BM_Pattern__bc_table">_bc_table</a></b>: <a href="collection.html#CLASS_Map">Map</a>[<a href="kernel.html#CLASS_Char">Char</a>, <a href="kernel.html#CLASS_Int">Int</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; bad characters
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_BM_Pattern__gs">_gs</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="kernel.html#CLASS_Int">Int</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; good shifts
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_BM_Pattern__length">_length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; length of the motif
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_BM_Pattern__motif">_motif</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; searched motif
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of BM_Pattern</th><tr>
+</table>
+<a name="PROP_BM_Pattern_init"></a><h3>init</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>init <b>init</b>(<a href="#CLASS_String">String</a>)</p>
+<blockquote><pre> Compile a new motif 
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of BM_Pattern</th><tr>
+</table>
+<a name="PROP_BM_Pattern_bc"></a><h3>bc</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>private fun <b>bc</b>(<a href="kernel.html#CLASS_Char">Char</a>): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_BM_Pattern_compute_bc"></a><h3>compute_bc</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>private fun <b>compute_bc</b></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_BM_Pattern_compute_gs"></a><h3>compute_gs</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>private fun <b>compute_gs</b></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_BM_Pattern_search_in"></a><h3>search_in</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>redef fun <a href="#CLASS_Pattern">Pattern</a>:: <b>search_in</b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match</p>
+<blockquote><pre> boyer-moore search. Return null if not found 
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_BM_Pattern_search_index_in"></a><h3>search_index_in</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>redef fun <a href="#CLASS_Pattern">Pattern</a>:: <b>search_index_in</b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> boyer-moore search gives the position of the first occurence of a pattern starting at position `from'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_BM_Pattern_suffixes"></a><h3>suffixes</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>private fun <b>suffixes</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="kernel.html#CLASS_Int">Int</a>]</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of BM_Pattern</th><tr>
+</table>
+<a name="PROP_BM_Pattern__bc_table"></a><h3>_bc_table</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>var <b>_bc_table</b>: <a href="collection.html#CLASS_Map">Map</a>[<a href="kernel.html#CLASS_Char">Char</a>, <a href="kernel.html#CLASS_Int">Int</a>]</p>
+<blockquote><pre> bad characters
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_BM_Pattern__gs"></a><h3>_gs</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>var <b>_gs</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="kernel.html#CLASS_Int">Int</a>]</p>
+<blockquote><pre> good shifts
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_BM_Pattern__length"></a><h3>_length</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>var <b>_length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> length of the motif
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_BM_Pattern__motif"></a><h3>_motif</h3><p><small>string_search::<a href="#CLASS_BM_Pattern">BM_Pattern</a>::</small><br/>var <b>_motif</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> searched motif
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Match"></a><h2>Match</h2><small>string_search::</small><br/>class <b>Match</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Matches are a part of a string.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Match</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Match_init">init</a></b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Matches `len' characters of `s' from `f'.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Match</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Match_after">after</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The position of the first character just after the matching part.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Match_from">from</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The starting position in the string
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Match_length">length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The length of the mathching part
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Match_string">string</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The base string matched
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="kernel.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Match_to_s">to_s</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The contents of the mathing part
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Match</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Match__from">_from</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The starting position in the string
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Match__length">_length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The length of the mathching part
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Match__string">_string</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The base string matched
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Match</th><tr>
+</table>
+<a name="PROP_Match_init"></a><h3>init</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>init <b>init</b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Matches `len' characters of `s' from `f'.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Match</th><tr>
+</table>
+<a name="PROP_Match_after"></a><h3>after</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>fun <b>after</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The position of the first character just after the matching part.
+ May be out of the base string
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match_from"></a><h3>from</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>fun <b>from</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The starting position in the string
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match_length"></a><h3>length</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>fun <b>length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The length of the mathching part
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match_string"></a><h3>string</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>fun <b>string</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> The base string matched
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match_to_s"></a><h3>to_s</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>redef fun <a href="kernel.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> The contents of the mathing part
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Match</th><tr>
+</table>
+<a name="PROP_Match__from"></a><h3>_from</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>var <b>_from</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The starting position in the string
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match__length"></a><h3>_length</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>var <b>_length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The length of the mathching part
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Match__string"></a><h3>_string</h3><p><small>string_search::<a href="#CLASS_Match">Match</a>::</small><br/>var <b>_string</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> The base string matched
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Pattern"></a><h2>Pattern</h2><small>string_search::</small><br/>class <b>Pattern</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_BM_Pattern">BM_Pattern</a>, <a href="kernel.html#CLASS_Char">Char</a>, <a href="#CLASS_String">String</a>
+</dl>
+<pre> Patterns are string motifs.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Pattern</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Pattern_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Pattern</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Pattern_search_all_in">search_all_in</a></b>(<a href="#CLASS_String">String</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Search all `self' occucences into `s'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Pattern_search_in">search_in</a></b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Search `self' into `s' from a certain position.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Pattern_search_index_in">search_index_in</a></b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Search `self' into `s' from a certain position.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Pattern_split_in">split_in</a></b>(<a href="#CLASS_String">String</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Split `s' using `self' is separator.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Pattern</th><tr>
+</table>
+<a name="PROP_Pattern_init"></a><h3>init</h3><p><small>string_search::<a href="#CLASS_Pattern">Pattern</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Pattern</th><tr>
+</table>
+<a name="PROP_Pattern_search_all_in"></a><h3>search_all_in</h3><p><small>string_search::<a href="#CLASS_Pattern">Pattern</a>::</small><br/>fun <b>search_all_in</b>(<a href="#CLASS_String">String</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]</p>
+<blockquote><pre> Search all `self' occucences into `s'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Pattern_search_in"></a><h3>search_in</h3><p><small>string_search::<a href="#CLASS_Pattern">Pattern</a>::</small><br/>fun <b>search_in</b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match is abstract</p>
+<blockquote><pre> Search `self' into `s' from a certain position.
+ Return null if not found.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Pattern_search_index_in"></a><h3>search_index_in</h3><p><small>string_search::<a href="#CLASS_Pattern">Pattern</a>::</small><br/>fun <b>search_index_in</b>(<a href="#CLASS_String">String</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a> is abstract</p>
+<blockquote><pre> Search `self' into `s' from a certain position.
+ Return the position of the first character of the matching section.
+ Return -1 if not found.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Pattern_split_in"></a><h3>split_in</h3><p><small>string_search::<a href="#CLASS_Pattern">Pattern</a>::</small><br/>fun <b>split_in</b>(<a href="#CLASS_String">String</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]</p>
+<blockquote><pre> Split `s' using `self' is separator.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_String"></a><h2>String</h2><small>string_search::</small><br/>redef class <a href="string.html">string</a>::<b>String</b>
+<blockquote>
+<dl>
+<dt>Refine String from: <dd><a href="string.html">string</a>
+<dt>Direct superclasses: <dd><a href="#CLASS_Pattern">Pattern</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="string.html#CLASS_AbstractString">AbstractString</a>
+<dt>All superclasses: <dd><a href="#CLASS_Pattern">Pattern</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="string.html#CLASS_AbstractString">AbstractString</a>, <a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="collection.html#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="symbol.html">symbol</a>, <a href="file.html">file</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of String</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of String</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_search">search</a></b>(<a href="#CLASS_Pattern">Pattern</a>): nullable Match<br/>&nbsp;&nbsp;&nbsp;&nbsp; Like `search_from' but from the first chararter.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_search_all">search_all</a></b>(<a href="#CLASS_Pattern">Pattern</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Search all occurences of p into self.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_search_from">search_from</a></b>(<a href="#CLASS_Pattern">Pattern</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match<br/>&nbsp;&nbsp;&nbsp;&nbsp; Search the given pattern into self from a.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_split">split</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_String">String</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Split self using '\n' is separator.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_split_with">split_with</a></b>(<a href="#CLASS_Pattern">Pattern</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_String">String</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Split self using p is separator.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Pattern">Pattern</a></small></td><td><small><a href="#PROP_Pattern_search_all_in">search_all_in</a>, <a href="#PROP_Pattern_search_in">search_in</a>, <a href="#PROP_Pattern_search_index_in">search_index_in</a>, <a href="#PROP_Pattern_split_in">split_in</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_String___star">*</a>, <a href="string.html#PROP_String___plus">+</a>, <a href="string.html#PROP_AbstractString_a_to">a_to</a>, <a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_AbstractString_has_prefix">has_prefix</a>, <a href="string.html#PROP_AbstractString_has_substring">has_substring</a>, <a href="string.html#PROP_AbstractString_has_suffix">has_suffix</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_AbstractString_items">items</a>, <a href="string.html#PROP_Collection_join">join</a>, <a href="string.html#PROP_AbstractString_substring">substring</a>, <a href="string.html#PROP_AbstractString_substring_from">substring_from</a>, <a href="string.html#PROP_String_to_cstring">to_cstring</a>, <a href="string.html#PROP_AbstractString_to_hex">to_hex</a>, <a href="string.html#PROP_AbstractString_to_i">to_i</a>, <a href="string.html#PROP_AbstractString_to_lower">to_lower</a>, <a href="string.html#PROP_Collection_to_s">to_s</a>, <a href="string.html#PROP_Object_to_s">to_s</a>, <a href="string.html#PROP_AbstractString_to_upper">to_upper</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead___eqeq">==</a>, <a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_SequenceRead_first">first</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_SequenceRead_last">last</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_reversed">reversed</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Comparable___l"><</a>, <a href="kernel.html#PROP_Comparable___leq"><=</a>, <a href="kernel.html#PROP_Comparable___leqg"><=></a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Comparable___g">></a>, <a href="kernel.html#PROP_Comparable___geq">>=</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Comparable_is_between">is_between</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Comparable_max">max</a>, <a href="kernel.html#PROP_Comparable_min">min</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="symbol.html">symbol</a></small></td><td><small><a href="symbol.html#PROP_String_to_symbol">to_symbol</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="file.html">file</a></small></td><td><small><a href="file.html#PROP_String_basename">basename</a>, <a href="file.html#PROP_String_dirname">dirname</a>, <a href="file.html#PROP_String_file_delete">file_delete</a>, <a href="file.html#PROP_String_file_exists">file_exists</a>, <a href="file.html#PROP_String_file_path">file_path</a>, <a href="file.html#PROP_String_file_stat">file_stat</a>, <a href="file.html#PROP_String_mkdir">mkdir</a>, <a href="file.html#PROP_String_strip_extension">strip_extension</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of String</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_AbstractString__items">_items</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of String</th><tr>
+</table>
+<a name="PROP_String_search"></a><h3>search</h3><p><small>string_search::<a href="#CLASS_String">String</a>::</small><br/>fun <b>search</b>(<a href="#CLASS_Pattern">Pattern</a>): nullable Match</p>
+<blockquote><pre> Like `search_from' but from the first chararter.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_search_all"></a><h3>search_all</h3><p><small>string_search::<a href="#CLASS_String">String</a>::</small><br/>fun <b>search_all</b>(<a href="#CLASS_Pattern">Pattern</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_Match">Match</a>]</p>
+<blockquote><pre> Search all occurences of p into self.
+
+   var a = new Array[Int]
+   for i in "hello world".searches('o') do
+       a.add(i.from)
+   end
+   a    # -> [4, 7]
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_search_from"></a><h3>search_from</h3><p><small>string_search::<a href="#CLASS_String">String</a>::</small><br/>fun <b>search_from</b>(<a href="#CLASS_Pattern">Pattern</a>, <a href="kernel.html#CLASS_Int">Int</a>): nullable Match</p>
+<blockquote><pre> Search the given pattern into self from a.
+ The search starts at `from'.
+ Return null if not found.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_split"></a><h3>split</h3><p><small>string_search::<a href="#CLASS_String">String</a>::</small><br/>fun <b>split</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_String">String</a>]</p>
+<blockquote><pre> Split self using '\n' is separator.
+   "hello\nworld".split     # -> ["hello","world"]
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_split_with"></a><h3>split_with</h3><p><small>string_search::<a href="#CLASS_String">String</a>::</small><br/>fun <b>split_with</b>(<a href="#CLASS_Pattern">Pattern</a>): <a href="collection.html#CLASS_Array">Array</a>[<a href="#CLASS_String">String</a>]</p>
+<blockquote><pre> Split self using p is separator.
+   "hello world".split('o')     # -> ["hell", " w", "rld"]
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>

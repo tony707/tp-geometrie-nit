@@ -1,0 +1,570 @@
+<html><head><title>Module kernel</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <b>Public</b>&nbsp; <strike><b>Inside</b></strike>&nbsp; <a href="kernel__.html"><b>Intrude</b></a>&nbsp; <br/><h1>Module kernel</h1>
+<dl><a href="standard.html">standard</a>::<br/>module <b>kernel</b><br/>
+</dl>
+<pre> This module is the root of the standard module hierarchy.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of kernel</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Bool">Bool</a></b><br/> Native booleans.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Char">Char</a></b><br/> Native characters.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Comparable">Comparable</a></b><br/> The ancestor of class where objects are in a total order.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Discrete">Discrete</a></b><br/> Discrete total orders.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Float">Float</a></b><br/> Native floating point numbers.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Int">Int</a></b><br/> Native integer numbers.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Object">Object</a></b><br/> The root of the class hierarchy.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Pointer">Pointer</a></b><br/> Pointer classes are used to manipulate extern C structures.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Sys">Sys</a></b><br/> The main class of the program.
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of kernel</big></th><tr>
+</table>
+<a name="CLASS_Bool"></a><h2>Bool</h2><small>kernel::</small><br/>class <b>Bool</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+</dl>
+<pre> Native booleans.
+ `true' and `false' are the only instances.
+ Boolean are manipulated trought three special operators:
+	 `and', `or', `not'.
+ Booleans are mainly used by conditional statement and loops.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Bool</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+</blockquote><hr/>
+<a name="CLASS_Char"></a><h2>Char</h2><small>kernel::</small><br/>class <b>Char</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Discrete">Discrete</a>
+<dt>All superclasses: <dd><a href="#CLASS_Discrete">Discrete</a>, <a href="#CLASS_Comparable">Comparable</a>, <a href="#CLASS_Object">Object</a>
+</dl>
+<pre> Native characters.
+ Characters are denoted with simple quote.
+ eg. 'a' or '\n'.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Char</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Char</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_ascii">ascii</a></b>: <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; the ascii value of self
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_is_digit">is_digit</a></b>: <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_is_letter">is_letter</a></b>: <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_is_lower">is_lower</a></b>: <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_is_upper">is_upper</a></b>: <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_to_i">to_i</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; If `self' is a digit then return this digit.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_to_lower">to_lower</a></b>: <a href="#CLASS_Char">Char</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Char to lower case
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Char_to_upper">to_upper</a></b>: <a href="#CLASS_Char">Char</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Char to upper case
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Discrete">Discrete</a></small></td><td><small><a href="#PROP_Discrete___plus">+</a>, <a href="#PROP_Discrete___minus">-</a>, <a href="#PROP_Discrete_distance">distance</a>, <a href="#PROP_Discrete_prec">prec</a>, <a href="#PROP_Discrete_succ">succ</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable___l"><</a>, <a href="#PROP_Comparable___leq"><=</a>, <a href="#PROP_Comparable___leqg"><=></a>, <a href="#PROP_Comparable___g">></a>, <a href="#PROP_Comparable___geq">>=</a>, <a href="#PROP_Comparable_is_between">is_between</a>, <a href="#PROP_Comparable_max">max</a>, <a href="#PROP_Comparable_min">min</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Char</th><tr>
+</table>
+<a name="PROP_Char_ascii"></a><h3>ascii</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>ascii</b>: <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote><pre> the ascii value of self
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Char_is_digit"></a><h3>is_digit</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>is_digit</b>: <a href="#CLASS_Bool">Bool</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Char_is_letter"></a><h3>is_letter</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>is_letter</b>: <a href="#CLASS_Bool">Bool</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Char_is_lower"></a><h3>is_lower</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>is_lower</b>: <a href="#CLASS_Bool">Bool</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Char_is_upper"></a><h3>is_upper</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>is_upper</b>: <a href="#CLASS_Bool">Bool</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Char_to_i"></a><h3>to_i</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>to_i</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> If `self' is a digit then return this digit.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Char_to_lower"></a><h3>to_lower</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>to_lower</b>: <a href="#CLASS_Char">Char</a></p>
+<blockquote><pre> Char to lower case
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Char_to_upper"></a><h3>to_upper</h3><p><small>kernel::<a href="#CLASS_Char">Char</a>::</small><br/>fun <b>to_upper</b>: <a href="#CLASS_Char">Char</a></p>
+<blockquote><pre> Char to upper case
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Comparable"></a><h2>Comparable</h2><small>kernel::</small><br/>class <b>Comparable</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Discrete">Discrete</a>
+<dt>Other direct subclasses in known modules: <dd><a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_Buffer">Buffer</a>
+</dl>
+<pre> The ancestor of class where objects are in a total order.
+ In order to work, the method '<' has to be redefined.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Comparable</th></tr>
+<tr><td width="20%" align="right">type</td><td><b><a href="#PROP_Comparable_OTHER">OTHER</a></b>: <a href="#CLASS_Comparable">Comparable</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Comparable</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable___l"><</a></b>(OTHER): <a href="#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is `self' lesser than `other'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable___leq"><=</a></b>(OTHER): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; not `other' < `self'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable___leqg"><=></a></b>(OTHER): <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; -1 if <, +1 if > and 0 otherwise
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable___g">></a></b>(OTHER): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; `other' < `self'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable___geq">>=</a></b>(OTHER): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; not `self' < `other' 
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable_is_between">is_between</a></b>(OTHER, OTHER): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; c <= self <= d
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable_max">max</a></b>(OTHER): OTHER<br/>&nbsp;&nbsp;&nbsp;&nbsp; The maximum between `self' and `other' (prefers `self' if equals).
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Comparable_min">min</a></b>(OTHER): OTHER<br/>&nbsp;&nbsp;&nbsp;&nbsp; The minimum between `self' and `c' (prefer `self' if equals)
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Virtual Types Detail of Comparable</th><tr>
+</table>
+<a name="PROP_Comparable_OTHER"></a><h3>OTHER</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>type <b>OTHER</b>: <a href="#CLASS_Comparable">Comparable</a></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Comparable</th><tr>
+</table>
+<a name="PROP_Comparable___l"></a><h3><</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b><</b>(OTHER): <a href="#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is `self' lesser than `other'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable___leq"></a><h3><=</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b><=</b>(OTHER): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> not `other' < `self'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable___leqg"></a><h3><=></h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b><=></b>(OTHER): <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> -1 if <, +1 if > and 0 otherwise
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable___g"></a><h3>></h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b>></b>(OTHER): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> `other' < `self'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable___geq"></a><h3>>=</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b>>=</b>(OTHER): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> not `self' < `other' 
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable_is_between"></a><h3>is_between</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b>is_between</b>(OTHER, OTHER): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> c <= self <= d
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable_max"></a><h3>max</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b>max</b>(OTHER): OTHER</p>
+<blockquote><pre> The maximum between `self' and `other' (prefers `self' if equals).
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Comparable_min"></a><h3>min</h3><p><small>kernel::<a href="#CLASS_Comparable">Comparable</a>::</small><br/>fun <b>min</b>(OTHER): OTHER</p>
+<blockquote><pre> The minimum between `self' and `c' (prefer `self' if equals)
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Discrete"></a><h2>Discrete</h2><small>kernel::</small><br/>class <b>Discrete</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Comparable">Comparable</a>
+<dt>All superclasses: <dd><a href="#CLASS_Comparable">Comparable</a>, <a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Int">Int</a>, <a href="#CLASS_Char">Char</a>
+</dl>
+<pre> Discrete total orders.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Discrete</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Discrete</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Discrete___plus">+</a></b>(<a href="#CLASS_Int">Int</a>): OTHER is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; The `i' th successor element.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Discrete___minus">-</a></b>(<a href="#CLASS_Int">Int</a>): OTHER is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; The `i' th previous element.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Discrete_distance">distance</a></b>(OTHER): <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The distance between self and d.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Discrete_prec">prec</a></b>: OTHER<br/>&nbsp;&nbsp;&nbsp;&nbsp; The previous element.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Discrete_succ">succ</a></b>: OTHER<br/>&nbsp;&nbsp;&nbsp;&nbsp; The next element.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable___l"><</a>, <a href="#PROP_Comparable___leq"><=</a>, <a href="#PROP_Comparable___leqg"><=></a>, <a href="#PROP_Comparable___g">></a>, <a href="#PROP_Comparable___geq">>=</a>, <a href="#PROP_Comparable_is_between">is_between</a>, <a href="#PROP_Comparable_max">max</a>, <a href="#PROP_Comparable_min">min</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Discrete</th><tr>
+</table>
+<a name="PROP_Discrete___plus"></a><h3>+</h3><p><small>kernel::<a href="#CLASS_Discrete">Discrete</a>::</small><br/>fun <b>+</b>(<a href="#CLASS_Int">Int</a>): OTHER is abstract</p>
+<blockquote><pre> The `i' th successor element.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Discrete___minus"></a><h3>-</h3><p><small>kernel::<a href="#CLASS_Discrete">Discrete</a>::</small><br/>fun <b>-</b>(<a href="#CLASS_Int">Int</a>): OTHER is abstract</p>
+<blockquote><pre> The `i' th previous element.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Discrete_distance"></a><h3>distance</h3><p><small>kernel::<a href="#CLASS_Discrete">Discrete</a>::</small><br/>fun <b>distance</b>(OTHER): <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> The distance between self and d.
+ 10.distance(15)	# --> 5
+ 'Z'.distance('A')	# --> 25
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Discrete_prec"></a><h3>prec</h3><p><small>kernel::<a href="#CLASS_Discrete">Discrete</a>::</small><br/>fun <b>prec</b>: OTHER</p>
+<blockquote><pre> The previous element.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Discrete_succ"></a><h3>succ</h3><p><small>kernel::<a href="#CLASS_Discrete">Discrete</a>::</small><br/>fun <b>succ</b>: OTHER</p>
+<blockquote><pre> The next element.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Float"></a><h2>Float</h2><small>kernel::</small><br/>class <b>Float</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>, <a href="math.html">math</a>, <a href="utils.html">utils</a>
+</dl>
+<pre> Native floating point numbers.
+ Corresponds to C float.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Float</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___star">*</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___plus">+</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___minus">-</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___slash">/</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___l"><</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___leq"><=</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___g">></a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float___geq">>=</a></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float_to_i">to_i</a></b>: <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; The integer part of `self'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float_unary__minus">unary -</a></b>: <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Float_to_precision">to_precision</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Float_acos">acos</a>, <a href="math.html#PROP_Float_asin">asin</a>, <a href="math.html#PROP_Float_atan">atan</a>, <a href="math.html#PROP_Float_cos">cos</a>, <a href="math.html#PROP_Float_exp">exp</a>, <a href="math.html#PROP_Float_log">log</a>, <a href="math.html#PROP_Float_pow">pow</a>, <a href="math.html#PROP_Float_rand">rand</a>, <a href="math.html#PROP_Float_sin">sin</a>, <a href="math.html#PROP_Float_sqrt">sqrt</a>, <a href="math.html#PROP_Float_tan">tan</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="utils.html">utils</a></small></td><td><small><a href="utils.html#PROP_Float_absolue">absolue</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Float</th><tr>
+</table>
+<a name="PROP_Float___star"></a><h3>*</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>*</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___plus"></a><h3>+</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>+</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___minus"></a><h3>-</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>-</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___slash"></a><h3>/</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>/</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___l"></a><h3><</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b><</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___leq"></a><h3><=</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b><=</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___g"></a><h3>></h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>></b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float___geq"></a><h3>>=</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>>=</b>(<a href="#CLASS_Float">Float</a>): <a href="#CLASS_Bool">Bool</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Float_to_i"></a><h3>to_i</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>to_i</b>: <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote><pre> The integer part of `self'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Float_unary__minus"></a><h3>unary -</h3><p><small>kernel::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>unary -</b>: <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Int"></a><h2>Int</h2><small>kernel::</small><br/>class <b>Int</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Discrete">Discrete</a>
+<dt>All superclasses: <dd><a href="#CLASS_Discrete">Discrete</a>, <a href="#CLASS_Comparable">Comparable</a>, <a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>, <a href="math.html">math</a>
+</dl>
+<pre> Native integer numbers.
+ Correspond to C int.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Int</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Int</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int___percent">%</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int___star">*</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int___slash">/</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_ascii">ascii</a></b>: <a href="#CLASS_Char">Char</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; The character whose ASCII value is `self'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_digit_count">digit_count</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Number of digits of an integer in base `b' plus one if negative)
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_enumerate_before">enumerate_before</a></b>(<a href="#CLASS_Int">Int</a>) !each(<a href="#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Executre 'each' for each integer in [self..after[
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_enumerate_to">enumerate_to</a></b>(<a href="#CLASS_Int">Int</a>) !each(<a href="#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Executre 'each' for each integer in [self..last]
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_lshift">lshift</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_rshift">rshift</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_to_c">to_c</a></b>: <a href="#CLASS_Char">Char</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the corresponding digit character
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_to_f">to_f</a></b>: <a href="#CLASS_Float">Float</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; The float equivalent of `self'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_unary__minus">unary -</a></b>: <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Discrete">Discrete</a></small></td><td><small><a href="#PROP_Discrete___plus">+</a>, <a href="#PROP_Discrete___minus">-</a>, <a href="#PROP_Discrete_distance">distance</a>, <a href="#PROP_Discrete_prec">prec</a>, <a href="#PROP_Discrete_succ">succ</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Comparable">Comparable</a></small></td><td><small><a href="#PROP_Comparable___l"><</a>, <a href="#PROP_Comparable___leq"><=</a>, <a href="#PROP_Comparable___leqg"><=></a>, <a href="#PROP_Comparable___g">></a>, <a href="#PROP_Comparable___geq">>=</a>, <a href="#PROP_Comparable_is_between">is_between</a>, <a href="#PROP_Comparable_max">max</a>, <a href="#PROP_Comparable_min">min</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Int_fill_buffer">fill_buffer</a>, <a href="string.html#PROP_Int_to_base">to_base</a>, <a href="string.html#PROP_Int_to_hex">to_hex</a>, <a href="string.html#PROP_Int_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Int_rand">rand</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Int</th><tr>
+</table>
+<a name="PROP_Int___percent"></a><h3>%</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>%</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int___star"></a><h3>*</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>*</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int___slash"></a><h3>/</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>/</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int_ascii"></a><h3>ascii</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>ascii</b>: <a href="#CLASS_Char">Char</a> is intern</p>
+<blockquote><pre> The character whose ASCII value is `self'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_digit_count"></a><h3>digit_count</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>digit_count</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> Number of digits of an integer in base `b' plus one if negative)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_enumerate_before"></a><h3>enumerate_before</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>enumerate_before</b>(<a href="#CLASS_Int">Int</a>) !each(<a href="#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Executre 'each' for each integer in [self..after[
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_enumerate_to"></a><h3>enumerate_to</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>enumerate_to</b>(<a href="#CLASS_Int">Int</a>) !each(<a href="#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Executre 'each' for each integer in [self..last]
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_lshift"></a><h3>lshift</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>lshift</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int_rshift"></a><h3>rshift</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>rshift</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int_to_c"></a><h3>to_c</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>to_c</b>: <a href="#CLASS_Char">Char</a></p>
+<blockquote><pre> Return the corresponding digit character
+ If 0 <= `self' <= 9, return the corresponding character.
+ If 10 <= `self' <= 36, return the corresponding letter [a..z].
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_to_f"></a><h3>to_f</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>to_f</b>: <a href="#CLASS_Float">Float</a> is intern</p>
+<blockquote><pre> The float equivalent of `self'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_unary__minus"></a><h3>unary -</h3><p><small>kernel::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>unary -</b>: <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Object"></a><h2>Object</h2><small>kernel::</small><br/>class <b>Object</b>
+<blockquote>
+<dl>
+<dt>Direct subclasses: <dd><a href="#CLASS_Sys">Sys</a>, <a href="#CLASS_Comparable">Comparable</a>, <a href="#CLASS_Bool">Bool</a>, <a href="#CLASS_Float">Float</a>, <a href="#CLASS_Pointer">Pointer</a>
+<dt>Other direct subclasses in known modules: <dd><a href="collection.html#CLASS_Collection">Collection</a>, <a href="collection.html#CLASS_Iterator">Iterator</a>, <a href="collection.html#CLASS_Couple">Couple</a>, <a href="collection.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="collection.html#CLASS_NativeArray">NativeArray</a>, <a href="collection.html#CLASS_AbstractSorter">AbstractSorter</a>, <a href="collection.html#CLASS_HashNode">HashNode</a>, <a href="string.html#CLASS_StringCapable">StringCapable</a>, <a href="string.html#CLASS_NativeString">NativeString</a>, <a href="symbol.html#CLASS_Symbol">Symbol</a>, <a href="string_search.html#CLASS_Pattern">Pattern</a>, <a href="string_search.html#CLASS_Match">Match</a>, <a href="stream.html#CLASS_IOS">IOS</a>, <a href="file.html#CLASS_NativeFileCapable">NativeFileCapable</a>, <a href="exec.html#CLASS_Process">Process</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="factory.html#CLASS_Fabrique">Fabrique</a>
+<dt>Refinements in known modules: <dd><a href="hash.html">hash</a>, <a href="string.html">string</a>, <a href="time.html">time</a>, <a href="file.html">file</a>, <a href="math.html">math</a>
+</dl>
+<pre> The root of the class hierarchy.
+ Each class implicitely specialize Object.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Object</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object___neq">!=</a></b>(nullable Object): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Have `self' and `other' different values?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object___eqeq">==</a></b>(nullable Object): <a href="#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Have `self' and `other' the same value?
+</td></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_Object_exit">exit</a></b>(<a href="#CLASS_Int">Int</a>) is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object_is_same_type">is_same_type</a></b>(<a href="#CLASS_Object">Object</a>): <a href="#CLASS_Bool">Bool</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; Return true is `self' and `other' have the same dynamic type
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object_object_id">object_id</a></b>: <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; The unique object identifier in the class
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object_output">output</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Display self on stdout (debug only).
+</td></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_Object_sys">sys</a></b>: <a href="#CLASS_Sys">Sys</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="time.html">time</a></small></td><td><small><a href="time.html#PROP_Object_get_time">get_time</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="file.html">file</a></small></td><td><small><a href="file.html#PROP_Object_getc">getc</a>, <a href="file.html#PROP_Object_gets">gets</a>, <a href="file.html#PROP_Object_print">print</a>, <a href="file.html#PROP_Object_printn">printn</a>, <a href="file.html#PROP_Object_stderr">stderr</a>, <a href="file.html#PROP_Object_stdin">stdin</a>, <a href="file.html#PROP_Object_stdout">stdout</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Object_atan2">atan2</a>, <a href="math.html#PROP_Object_pi">pi</a>, <a href="math.html#PROP_Object_srand">srand</a>, <a href="math.html#PROP_Object_srand_from">srand_from</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Object</th><tr>
+</table>
+<a name="PROP_Object___neq"></a><h3>!=</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>!=</b>(nullable Object): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Have `self' and `other' different values?
+#
+ != is equivament with "not =".
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object___eqeq"></a><h3>==</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>==</b>(nullable Object): <a href="#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Have `self' and `other' the same value?
+#
+ Implicitely, the default implementation, is ==
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_exit"></a><h3>exit</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>protected fun <b>exit</b>(<a href="#CLASS_Int">Int</a>) is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Object_is_same_type"></a><h3>is_same_type</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>is_same_type</b>(<a href="#CLASS_Object">Object</a>): <a href="#CLASS_Bool">Bool</a> is intern</p>
+<blockquote><pre> Return true is `self' and `other' have the same dynamic type
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_object_id"></a><h3>object_id</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>object_id</b>: <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote><pre> The unique object identifier in the class
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_output"></a><h3>output</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>output</b></p>
+<blockquote><pre> Display self on stdout (debug only).
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_sys"></a><h3>sys</h3><p><small>kernel::<a href="#CLASS_Object">Object</a>::</small><br/>protected fun <b>sys</b>: <a href="#CLASS_Sys">Sys</a> is intern</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Pointer"></a><h2>Pointer</h2><small>kernel::</small><br/>class <b>Pointer</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="file.html#CLASS_FileStat">FileStat</a>, <a href="file.html#CLASS_NativeFile">NativeFile</a>, <a href="exec.html#CLASS_NativeProcess">NativeProcess</a>
+</dl>
+<pre> Pointer classes are used to manipulate extern C structures.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Pointer</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+</blockquote><hr/>
+<a name="CLASS_Sys"></a><h2>Sys</h2><small>kernel::</small><br/>class <b>Sys</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>, <a href="exec.html">exec</a>
+</dl>
+<pre> The main class of the program.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Sys</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Sys_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Sys</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sys_main">main</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Instructions outside classes implicetely redefine this method.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object___neq">!=</a>, <a href="#PROP_Object___eqeq">==</a>, <a href="#PROP_Object_exit">exit</a>, <a href="#PROP_Object_is_same_type">is_same_type</a>, <a href="#PROP_Object_object_id">object_id</a>, <a href="#PROP_Object_output">output</a>, <a href="#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Sys_program_name">program_name</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="exec.html">exec</a></small></td><td><small><a href="exec.html#PROP_Sys_system">system</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Sys</th><tr>
+</table>
+<a name="PROP_Sys_init"></a><h3>init</h3><p><small>kernel::<a href="#CLASS_Sys">Sys</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Sys</th><tr>
+</table>
+<a name="PROP_Sys_main"></a><h3>main</h3><p><small>kernel::<a href="#CLASS_Sys">Sys</a>::</small><br/>fun <b>main</b></p>
+<blockquote><pre> Instructions outside classes implicetely redefine this method.
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>

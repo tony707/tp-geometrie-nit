@@ -1,0 +1,655 @@
+<html><head><title>Module array</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="array.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module array</h1>
+<dl><a href="standard.html">standard</a>::<a href="collection.html">collection</a>::<br/>module <b>array</b><br/>
+<dt>Imported modules: <dd><a href="abstract_collection.html">abstract_collection</a>
+</dl>
+<pre> This module introduces the standard array structure.
+ It also implements two other abstract collections : ArrayMap and ArraySet
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of array</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_AbstractArray">AbstractArray</a></b>[E: nullable Object]<br/> Resizeable one dimention array of objects.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a></b>[E: nullable Object]<br/> One dimention array of objects.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Array">Array</a></b>[E: nullable Object]<br/> Resizeable one dimention array of objects.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ArrayCapable">ArrayCapable</a></b>[E: nullable Object]<br/> Subclasses of this class can create native arrays
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ArrayIterator">ArrayIterator</a></b>[E: nullable Object]<br/> An `Iterator' on `AbstractArray'
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ArrayMap">ArrayMap</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/> Associative arrays implemented with an array of (key, value) pairs.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ArraySet">ArraySet</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/> A set implemented with an Array.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ArraySetIterator">ArraySetIterator</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/> Iterators on sets implemented with arrays.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="abstract_collection.html">abstract_collection</a>::</td><td><b><a href="#CLASS_Collection">Collection</a></b>[E: nullable Object]<br/> The root of the collection hierarchy.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="abstract_collection.html">abstract_collection</a>::</td><td><b><a href="#CLASS_Iterator">Iterator</a></b>[E: nullable Object]<br/> Instances of the Iterator class generates a series of elements, one at a time.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_NativeArray">NativeArray</a></b>[E: nullable Object]<br/> Native C array (void ...).
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of array</big></th><tr>
+</table>
+<a name="CLASS_AbstractArray"></a><h2>AbstractArray</h2><small>array::</small><br/>class <b>AbstractArray</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>
+<dt>All superclasses: <dd><a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>, <a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="abstract_collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Array">Array</a>
+<dt>Other direct subclasses in known modules: <dd><a href="standard.html#CLASS_Buffer">Buffer</a>
+</dl>
+<pre> Resizeable one dimention array of objects.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of AbstractArray</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArray_enlarge">enlarge</a></b>(<a href="kernel.html#CLASS_Int">Int</a>) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArray_insert">insert</a></b>(E, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a></small></td><td><small><a href="#PROP_AbstractArrayRead___eqeq">==</a>, <a href="#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="#PROP_AbstractArrayRead_length">length</a>, <a href="#PROP_AbstractArrayRead_reversed">reversed</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Map___braeq">[]=</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add">add</a>, <a href="abstract_collection.html#PROP_Sequence_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="abstract_collection.html#PROP_Sequence_append">append</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_SequenceRead_first">first</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Sequence_first__eq">first=</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_SequenceRead_last">last</a>, <a href="abstract_collection.html#PROP_Sequence_last__eq">last=</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_Sequence_pop">pop</a>, <a href="abstract_collection.html#PROP_Sequence_push">push</a>, <a href="abstract_collection.html#PROP_Map_recover_with">recover_with</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Map_remove_at">remove_at</a>, <a href="abstract_collection.html#PROP_Sequence_shift">shift</a>, <a href="abstract_collection.html#PROP_Sequence_unshift">unshift</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of AbstractArray</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a></small></td><td><small><a href="#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of AbstractArray</th><tr>
+</table>
+<a name="PROP_AbstractArray_enlarge"></a><h3>enlarge</h3><p><small>array::<a href="#CLASS_AbstractArray">AbstractArray</a>::</small><br/>fun <b>enlarge</b>(<a href="kernel.html#CLASS_Int">Int</a>) is abstract</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractArray_insert"></a><h3>insert</h3><p><small>array::<a href="#CLASS_AbstractArray">AbstractArray</a>::</small><br/>fun <b>insert</b>(E, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_AbstractArrayRead"></a><h2>AbstractArrayRead</h2><small>array::</small><br/>class <b>AbstractArrayRead</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_AbstractArray">AbstractArray</a>
+<dt>Other direct subclasses in known modules: <dd><a href="standard.html#CLASS_AbstractString">AbstractString</a>
+</dl>
+<pre> One dimention array of objects.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of AbstractArrayRead</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_AbstractArrayRead_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of AbstractArrayRead</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="kernel.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_AbstractArrayRead___eqeq">==</a></b>(nullable Object): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Two arrays are equals if they have the same items in the same order.
+</td></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_AbstractArrayRead_copy_to">copy_to</a></b>(<a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="#CLASS_AbstractArray">AbstractArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArrayRead_index_of_from">index_of_from</a></b>(E, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArrayRead_last_index_of">last_index_of</a></b>(E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a></b>(E, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_AbstractArrayRead_length">length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The current length
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractArrayRead_reversed">reversed</a></b>: <a href="#CLASS_Array">Array</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_SequenceRead_first">first</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_SequenceRead_last">last</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of AbstractArrayRead</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_AbstractArrayRead__length">_length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The current length
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of AbstractArrayRead</th><tr>
+</table>
+<a name="PROP_AbstractArrayRead_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of AbstractArrayRead</th><tr>
+</table>
+<a name="PROP_AbstractArrayRead___eqeq"></a><h3>==</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>redef fun <a href="kernel.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Two arrays are equals if they have the same items in the same order.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_copy_to"></a><h3>copy_to</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>protected fun <b>copy_to</b>(<a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="#CLASS_AbstractArray">AbstractArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_index_of_from"></a><h3>index_of_from</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>fun <b>index_of_from</b>(E, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_last_index_of"></a><h3>last_index_of</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>fun <b>last_index_of</b>(E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_last_index_of_from"></a><h3>last_index_of_from</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>fun <b>last_index_of_from</b>(E, <a href="kernel.html#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_length"></a><h3>length</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The current length
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractArrayRead_reversed"></a><h3>reversed</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>fun <b>reversed</b>: <a href="#CLASS_Array">Array</a>[E]</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of AbstractArrayRead</th><tr>
+</table>
+<a name="PROP_AbstractArrayRead__length"></a><h3>_length</h3><p><small>array::<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>::</small><br/>var <b>_length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The current length
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Array"></a><h2>Array</h2><small>array::</small><br/>class <b>Array</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_AbstractArray">AbstractArray</a>, <a href="#CLASS_ArrayCapable">ArrayCapable</a>
+<dt>All superclasses: <dd><a href="#CLASS_AbstractArray">AbstractArray</a>, <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>, <a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="abstract_collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="#CLASS_ArrayCapable">ArrayCapable</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>
+</dl>
+<pre> Resizeable one dimention array of objects.
+
+ Arrays have a literal representation.
+     a = [12, 32, 8]
+ is equivalent with:
+     a = new Array[Int]
+     a.push(12)
+     a.push(32)
+     a.push(8)
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Array</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Array_filled_with">filled_with</a></b>(E, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an array of `count' elements
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Array_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an empty array.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Array_with_capacity">with_capacity</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an empty array with a given capacity.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Array_with_items">with_items</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an array with some `items'.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Array_with_native">with_native</a></b>(<a href="#CLASS_NativeArray">NativeArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a array filled with a given native array.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Array</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Array_intern_items">intern_items</a></b>: <a href="#CLASS_NativeArray">NativeArray</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Do not use this method
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Array_sort">sort</a></b> !cmp(E, E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Sort the array using the !cmp function.
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Array_sub_sort">sub_sort</a></b>(<a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>) !cmp(E, E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Sort `array' between `from' and `to' indices
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractArray">AbstractArray</a></small></td><td><small><a href="#PROP_AbstractArray_enlarge">enlarge</a>, <a href="#PROP_AbstractArray_insert">insert</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a></small></td><td><small><a href="#PROP_AbstractArrayRead___eqeq">==</a>, <a href="#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="#PROP_AbstractArrayRead_length">length</a>, <a href="#PROP_AbstractArrayRead_reversed">reversed</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_ArrayCapable">ArrayCapable</a></small></td><td><small><a href="#PROP_ArrayCapable_calloc_array">calloc_array</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Map___braeq">[]=</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add">add</a>, <a href="abstract_collection.html#PROP_Sequence_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="abstract_collection.html#PROP_Sequence_append">append</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_SequenceRead_first">first</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Sequence_first__eq">first=</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_SequenceRead_last">last</a>, <a href="abstract_collection.html#PROP_Sequence_last__eq">last=</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_Sequence_pop">pop</a>, <a href="abstract_collection.html#PROP_Sequence_push">push</a>, <a href="abstract_collection.html#PROP_Map_recover_with">recover_with</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Map_remove_at">remove_at</a>, <a href="abstract_collection.html#PROP_Sequence_shift">shift</a>, <a href="abstract_collection.html#PROP_Sequence_unshift">unshift</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Array_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Array</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Array__capacity">_capacity</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The size of `_items'.
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Array__items">_items</a></b>: nullable NativeArray[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The internal storage.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a></small></td><td><small><a href="#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Array</th><tr>
+</table>
+<a name="PROP_Array_filled_with"></a><h3>filled_with</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>init <b>filled_with</b>(E, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create an array of `count' elements
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>init <b>init</b></p>
+<blockquote><pre> Create an empty array.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_with_capacity"></a><h3>with_capacity</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>init <b>with_capacity</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create an empty array with a given capacity.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_with_items"></a><h3>with_items</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>init <b>with_items</b>(E)</p>
+<blockquote><pre> Create an array with some `items'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_with_native"></a><h3>with_native</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>init <b>with_native</b>(<a href="#CLASS_NativeArray">NativeArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create a array filled with a given native array.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Array</th><tr>
+</table>
+<a name="PROP_Array_intern_items"></a><h3>intern_items</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>fun <b>intern_items</b>: <a href="#CLASS_NativeArray">NativeArray</a>[E]</p>
+<blockquote><pre> Do not use this method
+ FIXME: Remove it once modules can intrude non local modules
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_sort"></a><h3>sort</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>fun <b>sort</b> !cmp(E, E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Sort the array using the !cmp function.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array_sub_sort"></a><h3>sub_sort</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>private fun <b>sub_sort</b>(<a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>) !cmp(E, E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Sort `array' between `from' and `to' indices
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Array</th><tr>
+</table>
+<a name="PROP_Array__capacity"></a><h3>_capacity</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>var <b>_capacity</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The size of `_items'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Array__items"></a><h3>_items</h3><p><small>array::<a href="#CLASS_Array">Array</a>::</small><br/>var <b>_items</b>: nullable NativeArray[E]</p>
+<blockquote><pre> The internal storage.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ArrayCapable"></a><h2>ArrayCapable</h2><small>array::</small><br/>class <b>ArrayCapable</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Array">Array</a>
+<dt>Other direct subclasses in known modules: <dd><a href="hash_collection.html#CLASS_HashCollection">HashCollection</a>
+</dl>
+<pre> Subclasses of this class can create native arrays
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ArrayCapable</th></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_ArrayCapable_calloc_array">calloc_array</a></b>(<a href="kernel.html#CLASS_Int">Int</a>): <a href="#CLASS_NativeArray">NativeArray</a>[E] is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp; Get a new array of `size' elements.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of ArrayCapable</th><tr>
+</table>
+<a name="PROP_ArrayCapable_calloc_array"></a><h3>calloc_array</h3><p><small>array::<a href="#CLASS_ArrayCapable">ArrayCapable</a>::</small><br/>protected fun <b>calloc_array</b>(<a href="kernel.html#CLASS_Int">Int</a>): <a href="#CLASS_NativeArray">NativeArray</a>[E] is intern</p>
+<blockquote><pre> Get a new array of `size' elements.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ArrayIterator"></a><h2>ArrayIterator</h2><small>array::</small><br/>class <b>ArrayIterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>, <a href="abstract_collection.html#CLASS_MapIterator">MapIterator</a>, <a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> An `Iterator' on `AbstractArray'
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ArrayIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ArrayIterator_init">init</a></b>(<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ArrayIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_IndexedIterator_index">index</a>, <a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_MapIterator_key">key</a>, <a href="abstract_collection.html#PROP_IndexedIterator_key">key</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of ArrayIterator</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArrayIterator__array">_array</a></b>: <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArrayIterator__index">_index</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ArrayIterator</th><tr>
+</table>
+<a name="PROP_ArrayIterator_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_ArrayIterator">ArrayIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>[E])</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of ArrayIterator</th><tr>
+</table>
+<a name="PROP_ArrayIterator__array"></a><h3>_array</h3><p><small>array::<a href="#CLASS_ArrayIterator">ArrayIterator</a>::</small><br/>var <b>_array</b>: <a href="#CLASS_AbstractArrayRead">AbstractArrayRead</a>[E]</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_ArrayIterator__index"></a><h3>_index</h3><p><small>array::<a href="#CLASS_ArrayIterator">ArrayIterator</a>::</small><br/>var <b>_index</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_ArrayMap"></a><h2>ArrayMap</h2><small>array::</small><br/>class <b>ArrayMap</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_CoupleMap">CoupleMap</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_CoupleMap">CoupleMap</a>, <a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Associative arrays implemented with an array of (key, value) pairs.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ArrayMap</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ArrayMap_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; A new empty map.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ArrayMap</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>::</td><td><b><a href="#PROP_ArrayMap___bra">[]</a></b>(K): E<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Map">Map</a>::</td><td><b><a href="#PROP_ArrayMap___braeq">[]=</a></b>(K, E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_ArrayMap_count">count</a></b>(E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_ArrayMap_enlarge">enlarge</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Assume the capacity to be at least `cap'.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_ArrayMap_has">has</a></b>(E): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>::</td><td><b><a href="#PROP_ArrayMap_has_key">has_key</a></b>(K): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_ArrayMap_has_only">has_only</a></b>(E): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_ArrayMap_index">index</a></b>(K): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Where is the `key' in `_item'?
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_ArrayMap_length">length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_ArrayMap_remove_at_index">remove_at_index</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; fast remove the ith element of the array
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Map___braeq">[]=</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_CoupleMap_couple_at">couple_at</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_Map_recover_with">recover_with</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Map_remove_at">remove_at</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of ArrayMap</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArrayMap__items">_items</a></b>: <a href="#CLASS_Array">Array</a>[<a href="abstract_collection.html#CLASS_Couple">Couple</a>[K, E]]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Internal storage.
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArrayMap__last_index">_last_index</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The last positive result given by a index(1) call
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ArrayMap</th><tr>
+</table>
+<a name="PROP_ArrayMap_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>init <b>init</b></p>
+<blockquote><pre> A new empty map.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of ArrayMap</th><tr>
+</table>
+<a name="PROP_ArrayMap___bra"></a><h3>[]</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>:: <b>[]</b>(K): E</p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap___braeq"></a><h3>[]=</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Map">Map</a>:: <b>[]=</b>(K, E)</p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_count"></a><h3>count</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>count</b>(E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_enlarge"></a><h3>enlarge</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>fun <b>enlarge</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Assume the capacity to be at least `cap'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_has"></a><h3>has</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>has</b>(E): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_has_key"></a><h3>has_key</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>:: <b>has_key</b>(K): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_has_only"></a><h3>has_only</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>has_only</b>(E): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_index"></a><h3>index</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>private fun <b>index</b>(K): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Where is the `key' in `_item'?
+ return -1 if not found
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_length"></a><h3>length</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap_remove_at_index"></a><h3>remove_at_index</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>private fun <b>remove_at_index</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> fast remove the ith element of the array
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of ArrayMap</th><tr>
+</table>
+<a name="PROP_ArrayMap__items"></a><h3>_items</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>var <b>_items</b>: <a href="#CLASS_Array">Array</a>[<a href="abstract_collection.html#CLASS_Couple">Couple</a>[K, E]]</p>
+<blockquote><pre> Internal storage.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArrayMap__last_index"></a><h3>_last_index</h3><p><small>array::<a href="#CLASS_ArrayMap">ArrayMap</a>::</small><br/>var <b>_last_index</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The last positive result given by a index(1) call
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ArraySet"></a><h2>ArraySet</h2><small>array::</small><br/>class <b>ArraySet</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Set">Set</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Set">Set</a>, <a href="abstract_collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> A set implemented with an Array.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ArraySet</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ArraySet_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an empty set
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ArraySet_with_capacity">with_capacity</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create an empty set with a given capacity.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ArraySet</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_ArraySet_enlarge">enlarge</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Assume the capacitydd is at least `cap'.
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_ArraySet_remove_at">remove_at</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_SimpleCollection_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Set_count">count</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Set_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of ArraySet</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArraySet__array">_array</a></b>: <a href="#CLASS_Array">Array</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The stored elements.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ArraySet</th><tr>
+</table>
+<a name="PROP_ArraySet_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_ArraySet">ArraySet</a>::</small><br/>init <b>init</b></p>
+<blockquote><pre> Create an empty set
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArraySet_with_capacity"></a><h3>with_capacity</h3><p><small>array::<a href="#CLASS_ArraySet">ArraySet</a>::</small><br/>init <b>with_capacity</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create an empty set with a given capacity.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of ArraySet</th><tr>
+</table>
+<a name="PROP_ArraySet_enlarge"></a><h3>enlarge</h3><p><small>array::<a href="#CLASS_ArraySet">ArraySet</a>::</small><br/>fun <b>enlarge</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Assume the capacitydd is at least `cap'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ArraySet_remove_at"></a><h3>remove_at</h3><p><small>array::<a href="#CLASS_ArraySet">ArraySet</a>::</small><br/>private fun <b>remove_at</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of ArraySet</th><tr>
+</table>
+<a name="PROP_ArraySet__array"></a><h3>_array</h3><p><small>array::<a href="#CLASS_ArraySet">ArraySet</a>::</small><br/>var <b>_array</b>: <a href="#CLASS_Array">Array</a>[E]</p>
+<blockquote><pre> The stored elements.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ArraySetIterator"></a><h2>ArraySetIterator</h2><small>array::</small><br/>class <b>ArraySetIterator</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>
+<dt>All superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Iterators on sets implemented with arrays.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ArraySetIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ArraySetIterator_init">init</a></b>(<a href="#CLASS_ArrayIterator">ArrayIterator</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ArraySetIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_to_a">to_a</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of ArraySetIterator</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_ArraySetIterator__iter">_iter</a></b>: <a href="#CLASS_ArrayIterator">ArrayIterator</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ArraySetIterator</th><tr>
+</table>
+<a name="PROP_ArraySetIterator_init"></a><h3>init</h3><p><small>array::<a href="#CLASS_ArraySetIterator">ArraySetIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_ArrayIterator">ArrayIterator</a>[E])</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of ArraySetIterator</th><tr>
+</table>
+<a name="PROP_ArraySetIterator__iter"></a><h3>_iter</h3><p><small>array::<a href="#CLASS_ArraySetIterator">ArraySetIterator</a>::</small><br/>var <b>_iter</b>: <a href="#CLASS_ArrayIterator">ArrayIterator</a>[E]</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Collection"></a><h2>Collection</h2><small>array::</small><br/>redef class <a href="abstract_collection.html">abstract_collection</a>::<b>Collection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Refine Collection from: <dd><a href="abstract_collection.html">abstract_collection</a>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="abstract_collection.html#CLASS_NaiveCollection">NaiveCollection</a>, <a href="abstract_collection.html#CLASS_Container">Container</a>
+<dt>Other direct subclasses in known modules: <dd><a href="hash_collection.html#CLASS_HashCollection">HashCollection</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Collection</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_to_a">to_a</a></b>: <a href="#CLASS_Array">Array</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Build a new array from a collection
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Collection_join">join</a>, <a href="standard.html#PROP_Collection_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Collection</th><tr>
+</table>
+<a name="PROP_Collection_to_a"></a><h3>to_a</h3><p><small>array::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>to_a</b>: <a href="#CLASS_Array">Array</a>[E]</p>
+<blockquote><pre> Build a new array from a collection
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Iterator"></a><h2>Iterator</h2><small>array::</small><br/>redef class <a href="abstract_collection.html">abstract_collection</a>::<b>Iterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Refine Iterator from: <dd><a href="abstract_collection.html">abstract_collection</a>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="abstract_collection.html#CLASS_MapIterator">MapIterator</a>, <a href="#CLASS_ArraySetIterator">ArraySetIterator</a>, <a href="abstract_collection.html#CLASS_ContainerIterator">ContainerIterator</a>
+<dt>Other direct subclasses in known modules: <dd><a href="hash_collection.html#CLASS_HashSetIterator">HashSetIterator</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Iterator</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Iterator_to_a">to_a</a></b>: <a href="#CLASS_Array">Array</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Interate on `self' and build an array
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Iterator</th><tr>
+</table>
+<a name="PROP_Iterator_to_a"></a><h3>to_a</h3><p><small>array::<a href="#CLASS_Iterator">Iterator</a>::</small><br/>fun <b>to_a</b>: <a href="#CLASS_Array">Array</a>[E]</p>
+<blockquote><pre> Interate on `self' and build an array
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_NativeArray"></a><h2>NativeArray</h2><small>array::</small><br/>class <b>NativeArray</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Native C array (void ...).
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of NativeArray</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeArray___bra">[]</a></b>(<a href="kernel.html#CLASS_Int">Int</a>): E is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeArray___braeq">[]=</a></b>(<a href="kernel.html#CLASS_Int">Int</a>, E) is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeArray_copy_to">copy_to</a></b>(<a href="#CLASS_NativeArray">NativeArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>) is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of NativeArray</th><tr>
+</table>
+<a name="PROP_NativeArray___bra"></a><h3>[]</h3><p><small>array::<a href="#CLASS_NativeArray">NativeArray</a>::</small><br/>fun <b>[]</b>(<a href="kernel.html#CLASS_Int">Int</a>): E is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeArray___braeq"></a><h3>[]=</h3><p><small>array::<a href="#CLASS_NativeArray">NativeArray</a>::</small><br/>fun <b>[]=</b>(<a href="kernel.html#CLASS_Int">Int</a>, E) is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeArray_copy_to"></a><h3>copy_to</h3><p><small>array::<a href="#CLASS_NativeArray">NativeArray</a>::</small><br/>fun <b>copy_to</b>(<a href="#CLASS_NativeArray">NativeArray</a>[E], <a href="kernel.html#CLASS_Int">Int</a>) is intern</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+</body></html>

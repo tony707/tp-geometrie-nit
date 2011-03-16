@@ -1,0 +1,127 @@
+<html><head><title>Module sorter</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="sorter.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module sorter</h1>
+<dl><a href="standard.html">standard</a>::<a href="collection.html">collection</a>::<br/>module <b>sorter</b><br/>
+<dt>Imported modules: <dd><a href="array.html">array</a>
+</dl>
+<pre> This module contains classes used to sorts arrays.
+ In order to provide your own sort class you should define a subclass of AbstractSorter with
+ a custom `compare' function.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of sorter</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_AbstractSorter">AbstractSorter</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/> This abstract class generalizes ways to sort an array
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ComparableSorter">ComparableSorter</a></b>[E: <a href="kernel.html#CLASS_Comparable">Comparable</a>]<br/> This class uses the operator <=> to sort arrays.
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of sorter</big></th><tr>
+</table>
+<a name="CLASS_AbstractSorter"></a><h2>AbstractSorter</h2><small>sorter::</small><br/>class <b>AbstractSorter</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_ComparableSorter">ComparableSorter</a>
+</dl>
+<pre> This abstract class generalizes ways to sort an array
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of AbstractSorter</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_AbstractSorter_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of AbstractSorter</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_AbstractSorter_bubble_sort">bubble_sort</a></b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Bubble-sort `array' between `from' and `to' indices
+</td></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_AbstractSorter_compare">compare</a></b>(E, E): <a href="kernel.html#CLASS_Int">Int</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Compare `a' and `b'.
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_AbstractSorter_quick_sort">quick_sort</a></b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Quick-sort `array' between `from' and `to' indices
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractSorter_sort">sort</a></b>(<a href="array.html#CLASS_Array">Array</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Sort `array' using the `compare' function.
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_AbstractSorter_sub_sort">sub_sort</a></b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Sort `array' between `from' and `to' indices
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of AbstractSorter</th><tr>
+</table>
+<a name="PROP_AbstractSorter_init"></a><h3>init</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of AbstractSorter</th><tr>
+</table>
+<a name="PROP_AbstractSorter_bubble_sort"></a><h3>bubble_sort</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>private fun <b>bubble_sort</b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Bubble-sort `array' between `from' and `to' indices
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractSorter_compare"></a><h3>compare</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>protected fun <b>compare</b>(E, E): <a href="kernel.html#CLASS_Int">Int</a> is abstract</p>
+<blockquote><pre> Compare `a' and `b'.
+ Returns:
+ 	-1 if a < b
+	0  if a = b
+	1  if a > b
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractSorter_quick_sort"></a><h3>quick_sort</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>private fun <b>quick_sort</b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Quick-sort `array' between `from' and `to' indices
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractSorter_sort"></a><h3>sort</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>fun <b>sort</b>(<a href="array.html#CLASS_Array">Array</a>[E])</p>
+<blockquote><pre> Sort `array' using the `compare' function.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractSorter_sub_sort"></a><h3>sub_sort</h3><p><small>sorter::<a href="#CLASS_AbstractSorter">AbstractSorter</a>::</small><br/>private fun <b>sub_sort</b>(<a href="array.html#CLASS_Array">Array</a>[E], <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Sort `array' between `from' and `to' indices
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ComparableSorter"></a><h2>ComparableSorter</h2><small>sorter::</small><br/>class <b>ComparableSorter</b>[E: <a href="kernel.html#CLASS_Comparable">Comparable</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_AbstractSorter">AbstractSorter</a>
+<dt>All superclasses: <dd><a href="#CLASS_AbstractSorter">AbstractSorter</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> This class uses the operator <=> to sort arrays.
+ You can also use the `sort' method of the `Array' class.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ComparableSorter</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ComparableSorter_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ComparableSorter</th></tr>
+<tr><td width="20%" align="right">redef protected fun <a href="#CLASS_AbstractSorter">AbstractSorter</a>::</td><td><b><a href="#PROP_ComparableSorter_compare">compare</a></b>(E, E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return a <=> b
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractSorter">AbstractSorter</a></small></td><td><small><a href="#PROP_AbstractSorter_bubble_sort">bubble_sort</a>, <a href="#PROP_AbstractSorter_compare">compare</a>, <a href="#PROP_AbstractSorter_quick_sort">quick_sort</a>, <a href="#PROP_AbstractSorter_sort">sort</a>, <a href="#PROP_AbstractSorter_sub_sort">sub_sort</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ComparableSorter</th><tr>
+</table>
+<a name="PROP_ComparableSorter_init"></a><h3>init</h3><p><small>sorter::<a href="#CLASS_ComparableSorter">ComparableSorter</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of ComparableSorter</th><tr>
+</table>
+<a name="PROP_ComparableSorter_compare"></a><h3>compare</h3><p><small>sorter::<a href="#CLASS_ComparableSorter">ComparableSorter</a>::</small><br/>redef protected fun <a href="#CLASS_AbstractSorter">AbstractSorter</a>:: <b>compare</b>(E, E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Return a <=> b
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>

@@ -1,0 +1,361 @@
+<html><head><title>Module exec</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="exec.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module exec</h1>
+<dl><a href="standard.html">standard</a>::<br/>module <b>exec</b><br/>
+<dt>Imported modules: <dd><a href="stream.html">stream</a>
+</dl>
+<pre> This module handle simple system calls
+ Standard input and output can be handleb trougth streams.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of exec</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_IOProcess">IOProcess</a></b><br/> stdin and stdout are both accessible
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_IProcess">IProcess</a></b><br/> stdout of the processus is readable
+</td><tr>
+<tr><td width="20%" align="right">private class </td><td><b><a href="#CLASS_NativeProcess">NativeProcess</a></b><br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">redef class <a href="string.html">string</a>::</td><td><b><a href="#CLASS_NativeString">NativeString</a></b><br/> Native strings are simple C char *
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_OProcess">OProcess</a></b><br/> stdin of the processus is writable
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Process">Process</a></b><br/> Simple sub-processus
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="kernel.html">kernel</a>::</td><td><b><a href="#CLASS_Sys">Sys</a></b><br/> The main class of the program.
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of exec</big></th><tr>
+</table>
+<a name="CLASS_IOProcess"></a><h2>IOProcess</h2><small>exec::</small><br/>class <b>IOProcess</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_IProcess">IProcess</a>, <a href="#CLASS_OProcess">OProcess</a>, <a href="stream.html#CLASS_IOStream">IOStream</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>, <a href="#CLASS_Process">Process</a>, <a href="stream.html#CLASS_IStream">IStream</a>, <a href="stream.html#CLASS_IOS">IOS</a>, <a href="#CLASS_IProcess">IProcess</a>, <a href="stream.html#CLASS_OStream">OStream</a>, <a href="#CLASS_OProcess">OProcess</a>, <a href="stream.html#CLASS_IOStream">IOStream</a>
+</dl>
+<pre> stdin and stdout are both accessible
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of IOProcess</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_IOProcess_init">init</a></b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_IOProcess_init_">init_</a></b>(<a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of IOProcess</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process_basic_exec_execute">basic_exec_execute</a>, <a href="#PROP_Process_id">id</a>, <a href="#PROP_Process_is_finished">is_finished</a>, <a href="#PROP_Process_status">status</a>, <a href="#PROP_Process_wait">wait</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="stream.html">stream</a></small></td><td><small><a href="stream.html#PROP_IStream_append_line_to">append_line_to</a>, <a href="stream.html#PROP_IOS_close">close</a>, <a href="stream.html#PROP_IStream_eof">eof</a>, <a href="stream.html#PROP_OStream_is_writable">is_writable</a>, <a href="stream.html#PROP_IStream_read">read</a>, <a href="stream.html#PROP_IStream_read_all">read_all</a>, <a href="stream.html#PROP_IStream_read_char">read_char</a>, <a href="stream.html#PROP_IStream_read_line">read_line</a>, <a href="stream.html#PROP_OStream_write">write</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of IOProcess</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process__data">_data</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_IProcess">IProcess</a></small></td><td><small><a href="#PROP_IProcess__in">_in</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_OProcess">OProcess</a></small></td><td><small><a href="#PROP_OProcess__out">_out</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of IOProcess</th><tr>
+</table>
+<a name="PROP_IOProcess_init"></a><h3>init</h3><p><small>exec::<a href="#CLASS_IOProcess">IOProcess</a>::</small><br/>init <b>init</b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_IOProcess_init_"></a><h3>init_</h3><p><small>exec::<a href="#CLASS_IOProcess">IOProcess</a>::</small><br/>init <b>init_</b>(<a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_IProcess"></a><h2>IProcess</h2><small>exec::</small><br/>class <b>IProcess</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Process">Process</a>, <a href="stream.html#CLASS_IStream">IStream</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>, <a href="#CLASS_Process">Process</a>, <a href="stream.html#CLASS_IStream">IStream</a>, <a href="stream.html#CLASS_IOS">IOS</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_IOProcess">IOProcess</a>
+</dl>
+<pre> stdout of the processus is readable
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of IProcess</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_IProcess_init">init</a></b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_IProcess_init_">init_</a></b>(<a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of IProcess</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process_basic_exec_execute">basic_exec_execute</a>, <a href="#PROP_Process_id">id</a>, <a href="#PROP_Process_is_finished">is_finished</a>, <a href="#PROP_Process_status">status</a>, <a href="#PROP_Process_wait">wait</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="stream.html">stream</a></small></td><td><small><a href="stream.html#PROP_IStream_append_line_to">append_line_to</a>, <a href="stream.html#PROP_IOS_close">close</a>, <a href="stream.html#PROP_IStream_eof">eof</a>, <a href="stream.html#PROP_IStream_read">read</a>, <a href="stream.html#PROP_IStream_read_all">read_all</a>, <a href="stream.html#PROP_IStream_read_char">read_char</a>, <a href="stream.html#PROP_IStream_read_line">read_line</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of IProcess</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_IProcess__in">_in</a></b>: <a href="stream.html#CLASS_FDIStream">FDIStream</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process__data">_data</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of IProcess</th><tr>
+</table>
+<a name="PROP_IProcess_init"></a><h3>init</h3><p><small>exec::<a href="#CLASS_IProcess">IProcess</a>::</small><br/>init <b>init</b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_IProcess_init_"></a><h3>init_</h3><p><small>exec::<a href="#CLASS_IProcess">IProcess</a>::</small><br/>init <b>init_</b>(<a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of IProcess</th><tr>
+</table>
+<a name="PROP_IProcess__in"></a><h3>_in</h3><p><small>exec::<a href="#CLASS_IProcess">IProcess</a>::</small><br/>var <b>_in</b>: <a href="stream.html#CLASS_FDIStream">FDIStream</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_NativeProcess"></a><h2>NativeProcess</h2><small>exec::</small><br/>private class <b>NativeProcess</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Pointer">Pointer</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Pointer">Pointer</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of NativeProcess</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_err_fd">err_fd</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_id">id</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_in_fd">in_fd</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_is_finished">is_finished</a></b>: <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_out_fd">out_fd</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_status">status</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_NativeProcess_wait">wait</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of NativeProcess</th><tr>
+</table>
+<a name="PROP_NativeProcess_err_fd"></a><h3>err_fd</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>err_fd</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_id"></a><h3>id</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>id</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_in_fd"></a><h3>in_fd</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>in_fd</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_is_finished"></a><h3>is_finished</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>is_finished</b>: <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_out_fd"></a><h3>out_fd</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>out_fd</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_status"></a><h3>status</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>status</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeProcess_wait"></a><h3>wait</h3><p><small>exec::<a href="#CLASS_NativeProcess">NativeProcess</a>::</small><br/>private fun <b>wait</b></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_NativeString"></a><h2>NativeString</h2><small>exec::</small><br/>redef class <a href="string.html">string</a>::<b>NativeString</b>
+<blockquote>
+<dl>
+<dt>Refine NativeString from: <dd><a href="string.html">string</a>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of NativeString</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString_system">system</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_NativeString___bra">[]</a>, <a href="string.html#PROP_NativeString___braeq">[]=</a>, <a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_NativeString_atoi">atoi</a>, <a href="string.html#PROP_NativeString_copy_to">copy_to</a>, <a href="string.html#PROP_NativeString_cstring_length">cstring_length</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of NativeString</th><tr>
+</table>
+<a name="PROP_NativeString_system"></a><h3>system</h3><p><small>exec::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>system</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_OProcess"></a><h2>OProcess</h2><small>exec::</small><br/>class <b>OProcess</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Process">Process</a>, <a href="stream.html#CLASS_OStream">OStream</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>, <a href="#CLASS_Process">Process</a>, <a href="stream.html#CLASS_OStream">OStream</a>, <a href="stream.html#CLASS_IOS">IOS</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_IOProcess">IOProcess</a>
+</dl>
+<pre> stdin of the processus is writable
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of OProcess</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_OProcess_init">init</a></b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_OProcess_init_">init_</a></b>(<a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of OProcess</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process_basic_exec_execute">basic_exec_execute</a>, <a href="#PROP_Process_id">id</a>, <a href="#PROP_Process_is_finished">is_finished</a>, <a href="#PROP_Process_status">status</a>, <a href="#PROP_Process_wait">wait</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="stream.html">stream</a></small></td><td><small><a href="stream.html#PROP_IOS_close">close</a>, <a href="stream.html#PROP_OStream_is_writable">is_writable</a>, <a href="stream.html#PROP_OStream_write">write</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of OProcess</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_OProcess__out">_out</a></b>: <a href="stream.html#CLASS_OStream">OStream</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Process">Process</a></small></td><td><small><a href="#PROP_Process__data">_data</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of OProcess</th><tr>
+</table>
+<a name="PROP_OProcess_init"></a><h3>init</h3><p><small>exec::<a href="#CLASS_OProcess">OProcess</a>::</small><br/>init <b>init</b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_OProcess_init_"></a><h3>init_</h3><p><small>exec::<a href="#CLASS_OProcess">OProcess</a>::</small><br/>init <b>init_</b>(<a href="string.html#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of OProcess</th><tr>
+</table>
+<a name="PROP_OProcess__out"></a><h3>_out</h3><p><small>exec::<a href="#CLASS_OProcess">OProcess</a>::</small><br/>var <b>_out</b>: <a href="stream.html#CLASS_OStream">OStream</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Process"></a><h2>Process</h2><small>exec::</small><br/>class <b>Process</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_IProcess">IProcess</a>, <a href="#CLASS_OProcess">OProcess</a>
+</dl>
+<pre> Simple sub-processus
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Process</th></tr>
+<tr><td width="20%" align="right">protected init</td><td><b><a href="#PROP_Process_execute">execute</a></b>(<a href="string.html#CLASS_String">String</a>, nullable Array[String], <a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Internal code to handle execusion
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Process_init">init</a></b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; launch a command with some arguments
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Process_init_">init_</a></b>(<a href="string.html#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; launch a simple command without arguments
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Process</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Process_basic_exec_execute">basic_exec_execute</a></b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_NativeString">NativeString</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="#CLASS_NativeProcess">NativeProcess</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Process_id">id</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The pid of the processus
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Process_is_finished">is_finished</a></b>: <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Is the processus finished?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Process_status">status</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The status once finished
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Process_wait">wait</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; wait the terminaison of the process
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Process</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Process__data">_data</a></b>: <a href="#CLASS_NativeProcess">NativeProcess</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Process</th><tr>
+</table>
+<a name="PROP_Process_execute"></a><h3>execute</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>protected init <b>execute</b>(<a href="string.html#CLASS_String">String</a>, nullable Array[String], <a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Internal code to handle execusion
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Process_init"></a><h3>init</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>init <b>init</b>(<a href="string.html#CLASS_String">String</a>, <a href="string.html#CLASS_String">String</a>)</p>
+<blockquote><pre> launch a command with some arguments
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Process_init_"></a><h3>init_</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>init <b>init_</b>(<a href="string.html#CLASS_String">String</a>)</p>
+<blockquote><pre> launch a simple command without arguments
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Process</th><tr>
+</table>
+<a name="PROP_Process_basic_exec_execute"></a><h3>basic_exec_execute</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>private fun <b>basic_exec_execute</b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_NativeString">NativeString</a>, <a href="kernel.html#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Int">Int</a>): <a href="#CLASS_NativeProcess">NativeProcess</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Process_id"></a><h3>id</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>fun <b>id</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The pid of the processus
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Process_is_finished"></a><h3>is_finished</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>fun <b>is_finished</b>: <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Is the processus finished?
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Process_status"></a><h3>status</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>fun <b>status</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The status once finished
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Process_wait"></a><h3>wait</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>fun <b>wait</b></p>
+<blockquote><pre> wait the terminaison of the process
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Process</th><tr>
+</table>
+<a name="PROP_Process__data"></a><h3>_data</h3><p><small>exec::<a href="#CLASS_Process">Process</a>::</small><br/>var <b>_data</b>: <a href="#CLASS_NativeProcess">NativeProcess</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Sys"></a><h2>Sys</h2><small>exec::</small><br/>redef class <a href="kernel.html">kernel</a>::<b>Sys</b>
+<blockquote>
+<dl>
+<dt>Refine Sys from: <dd><a href="kernel.html">kernel</a>
+<dt>Previous refinements in: <dd><a href="string.html">string</a>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Sys</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sys_system">system</a></b>(<a href="string.html#CLASS_String">String</a>): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Execute a shell command and return it's error code
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Object_args">args</a>, <a href="string.html#PROP_Sys_init_args">init_args</a>, <a href="string.html#PROP_Object_inspect">inspect</a>, <a href="string.html#PROP_Object_inspect_head">inspect_head</a>, <a href="string.html#PROP_Sys_native_argc">native_argc</a>, <a href="string.html#PROP_Sys_native_argv">native_argv</a>, <a href="string.html#PROP_Sys_program_name">program_name</a>, <a href="string.html#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Sys_main">main</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Sys</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="string.html">string</a></small></td><td><small><a href="string.html#PROP_Sys__args_cache">_args_cache</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Sys</th><tr>
+</table>
+<a name="PROP_Sys_system"></a><h3>system</h3><p><small>exec::<a href="#CLASS_Sys">Sys</a>::</small><br/>fun <b>system</b>(<a href="string.html#CLASS_String">String</a>): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Execute a shell command and return it's error code
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>

@@ -1,0 +1,466 @@
+<html><head><title>Module hash_collection</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="hash_collection.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module hash_collection</h1>
+<dl><a href="standard.html">standard</a>::<a href="collection.html">collection</a>::<br/>module <b>hash_collection</b><br/>
+<dt>Imported modules: <dd><a href="array.html">array</a>, <a href="hash.html">hash</a>
+</dl>
+<pre> Introduce Hashmap and Hashset.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of hash_collection</big></th><tr>
+<tr><td width="20%" align="right">private class </td><td><b><a href="#CLASS_HashCollection">HashCollection</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>N: <a href="#CLASS_HashNode">HashNode</a>[K]E: nullable Object]<br/> A HashCollection is an array of HashNode[K] indexed by the K hash value
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashMap">HashMap</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashMapIterator">HashMapIterator</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashMapNode">HashMapNode</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">private class </td><td><b><a href="#CLASS_HashNode">HashNode</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashSet">HashSet</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashSetIterator">HashSetIterator</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_HashSetNode">HashSetNode</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/>&nbsp;</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of hash_collection</big></th><tr>
+</table>
+<a name="CLASS_HashCollection"></a><h2>HashCollection</h2><small>hash_collection::</small><br/>private class <b>HashCollection</b>[K: <a href="kernel.html#CLASS_Object">Object</a>N: <a href="#CLASS_HashNode">HashNode</a>[K]E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Collection">Collection</a>, <a href="array.html#CLASS_ArrayCapable">ArrayCapable</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Collection">Collection</a>, <a href="array.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_HashMap">HashMap</a>, <a href="#CLASS_HashSet">HashSet</a>
+</dl>
+<pre> A HashCollection is an array of HashNode[K] indexed by the K hash value
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashCollection</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashCollection_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashCollection</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_enlarge">enlarge</a></b>(<a href="kernel.html#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_first_item">first_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_index_at">index_at</a></b>(K): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the index of the key k
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_node_at">node_at</a></b>(K): nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the node assosiated with the key
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_node_at_idx">node_at_idx</a></b>(<a href="kernel.html#CLASS_Int">Int</a>, K): nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the node assosiated with the key (but with the index already known)
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_raz">raz</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_remove_node">remove_node</a></b>(K)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove the node assosiated with the key
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashCollection_store">store</a></b>(<a href="kernel.html#CLASS_Int">Int</a>, N)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add a new node at a given index
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_ArrayCapable_calloc_array">calloc_array</a>, <a href="array.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashCollection</th></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__array">_array</a></b>: nullable NativeArray[nullable N]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__capacity">_capacity</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__first_item">_first_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__last_accessed_key">_last_accessed_key</a></b>: nullable K<br/>&nbsp;&nbsp;&nbsp;&nbsp; The last key accessed (used for cache)
+</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__last_accessed_node">_last_accessed_node</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp; The last node accessed (used for cache)
+</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__last_item">_last_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashCollection__length">_length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashCollection</th><tr>
+</table>
+<a name="PROP_HashCollection_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of HashCollection</th><tr>
+</table>
+<a name="PROP_HashCollection_enlarge"></a><h3>enlarge</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>enlarge</b>(<a href="kernel.html#CLASS_Int">Int</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection_first_item"></a><h3>first_item</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>first_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection_index_at"></a><h3>index_at</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>index_at</b>(K): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Return the index of the key k
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection_node_at"></a><h3>node_at</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>node_at</b>(K): nullable N</p>
+<blockquote><pre> Return the node assosiated with the key
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection_node_at_idx"></a><h3>node_at_idx</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>node_at_idx</b>(<a href="kernel.html#CLASS_Int">Int</a>, K): nullable N</p>
+<blockquote><pre> Return the node assosiated with the key (but with the index already known)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection_raz"></a><h3>raz</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>raz</b></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection_remove_node"></a><h3>remove_node</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>remove_node</b>(K)</p>
+<blockquote><pre> Remove the node assosiated with the key
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection_store"></a><h3>store</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private fun <b>store</b>(<a href="kernel.html#CLASS_Int">Int</a>, N)</p>
+<blockquote><pre> Add a new node at a given index
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of HashCollection</th><tr>
+</table>
+<a name="PROP_HashCollection__array"></a><h3>_array</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_array</b>: nullable NativeArray[nullable N]</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection__capacity"></a><h3>_capacity</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_capacity</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection__first_item"></a><h3>_first_item</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_first_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection__last_accessed_key"></a><h3>_last_accessed_key</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_last_accessed_key</b>: nullable K</p>
+<blockquote><pre> The last key accessed (used for cache)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection__last_accessed_node"></a><h3>_last_accessed_node</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_last_accessed_node</b>: nullable N</p>
+<blockquote><pre> The last node accessed (used for cache)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashCollection__last_item"></a><h3>_last_item</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_last_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashCollection__length"></a><h3>_length</h3><p><small>hash_collection::<a href="#CLASS_HashCollection">HashCollection</a>::</small><br/>private var <b>_length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashMap"></a><h2>HashMap</h2><small>hash_collection::</small><br/>class <b>HashMap</b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="#CLASS_HashCollection">HashCollection</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_HashCollection">HashCollection</a>, <a href="abstract_collection.html#CLASS_Collection">Collection</a>, <a href="array.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashMap</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashMap_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashMap</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashCollection">HashCollection</a></small></td><td><small><a href="#PROP_HashCollection_enlarge">enlarge</a>, <a href="#PROP_HashCollection_first_item">first_item</a>, <a href="#PROP_HashCollection_index_at">index_at</a>, <a href="#PROP_HashCollection_node_at">node_at</a>, <a href="#PROP_HashCollection_node_at_idx">node_at_idx</a>, <a href="#PROP_HashCollection_raz">raz</a>, <a href="#PROP_HashCollection_remove_node">remove_node</a>, <a href="#PROP_HashCollection_store">store</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_ArrayCapable_calloc_array">calloc_array</a>, <a href="array.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Map___braeq">[]=</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_Map_recover_with">recover_with</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Map_remove_at">remove_at</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashMap</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashCollection">HashCollection</a></small></td><td><small><a href="#PROP_HashCollection__array">_array</a>, <a href="#PROP_HashCollection__capacity">_capacity</a>, <a href="#PROP_HashCollection__first_item">_first_item</a>, <a href="#PROP_HashCollection__last_accessed_key">_last_accessed_key</a>, <a href="#PROP_HashCollection__last_accessed_node">_last_accessed_node</a>, <a href="#PROP_HashCollection__last_item">_last_item</a>, <a href="#PROP_HashCollection__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashMap</th><tr>
+</table>
+<a name="PROP_HashMap_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashMap">HashMap</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashMapIterator"></a><h2>HashMapIterator</h2><small>hash_collection::</small><br/>class <b>HashMapIterator</b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_MapIterator">MapIterator</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_MapIterator">MapIterator</a>, <a href="abstract_collection.html#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashMapIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashMapIterator_init">init</a></b>(<a href="#CLASS_HashMap">HashMap</a>[K, V])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashMapIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_Iterator_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_MapIterator_key">key</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashMapIterator</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_HashMapIterator__map">_map</a></b>: <a href="#CLASS_HashMap">HashMap</a>[K, V]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The map to iterate on
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_HashMapIterator__node">_node</a></b>: nullable HashMapNode[K, V]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The current node
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashMapIterator</th><tr>
+</table>
+<a name="PROP_HashMapIterator_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashMapIterator">HashMapIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_HashMap">HashMap</a>[K, V])</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of HashMapIterator</th><tr>
+</table>
+<a name="PROP_HashMapIterator__map"></a><h3>_map</h3><p><small>hash_collection::<a href="#CLASS_HashMapIterator">HashMapIterator</a>::</small><br/>var <b>_map</b>: <a href="#CLASS_HashMap">HashMap</a>[K, V]</p>
+<blockquote><pre> The map to iterate on
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashMapIterator__node"></a><h3>_node</h3><p><small>hash_collection::<a href="#CLASS_HashMapIterator">HashMapIterator</a>::</small><br/>var <b>_node</b>: nullable HashMapNode[K, V]</p>
+<blockquote><pre> The current node
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashMapNode"></a><h2>HashMapNode</h2><small>hash_collection::</small><br/>class <b>HashMapNode</b>[K: <a href="kernel.html#CLASS_Object">Object</a>V: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_HashNode">HashNode</a>
+<dt>All superclasses: <dd><a href="#CLASS_HashNode">HashNode</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of HashMapNode</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode_N">N</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashMapNode</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashMapNode_init">init</a></b>(K, V)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashMapNode</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode_next_item">next_item</a>, <a href="#PROP_HashNode_next_item__eq">next_item=</a>, <a href="#PROP_HashNode_prev_item">prev_item</a>, <a href="#PROP_HashNode_prev_item__eq">prev_item=</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashMapNode</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_HashMapNode__value">_value</a></b>: V<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode__key">_key</a>, <a href="#PROP_HashNode__next_in_bucklet">_next_in_bucklet</a>, <a href="#PROP_HashNode__next_item">_next_item</a>, <a href="#PROP_HashNode__prev_in_bucklet">_prev_in_bucklet</a>, <a href="#PROP_HashNode__prev_item">_prev_item</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashMapNode</th><tr>
+</table>
+<a name="PROP_HashMapNode_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashMapNode">HashMapNode</a>::</small><br/>init <b>init</b>(K, V)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of HashMapNode</th><tr>
+</table>
+<a name="PROP_HashMapNode__value"></a><h3>_value</h3><p><small>hash_collection::<a href="#CLASS_HashMapNode">HashMapNode</a>::</small><br/>var <b>_value</b>: V</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashNode"></a><h2>HashNode</h2><small>hash_collection::</small><br/>private class <b>HashNode</b>[K: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_HashMapNode">HashMapNode</a>, <a href="#CLASS_HashSetNode">HashSetNode</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of HashNode</th></tr>
+<tr><td width="20%" align="right">private type</td><td><b><a href="#PROP_HashNode_N">N</a></b>: <a href="#CLASS_HashNode">HashNode</a>[K]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashNode</th></tr>
+<tr><td width="20%" align="right">private init</td><td><b><a href="#PROP_HashNode_init">init</a></b>(K)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashNode</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashNode_next_item">next_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashNode_next_item__eq">next_item=</a></b>(nullable N)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashNode_prev_item">prev_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_HashNode_prev_item__eq">prev_item=</a></b>(nullable N)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashNode</th></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashNode__key">_key</a></b>: K<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashNode__next_in_bucklet">_next_in_bucklet</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashNode__next_item">_next_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashNode__prev_in_bucklet">_prev_in_bucklet</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_HashNode__prev_item">_prev_item</a></b>: nullable N<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Virtual Types Detail of HashNode</th><tr>
+</table>
+<a name="PROP_HashNode_N"></a><h3>N</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private type <b>N</b>: <a href="#CLASS_HashNode">HashNode</a>[K]</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashNode</th><tr>
+</table>
+<a name="PROP_HashNode_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private init <b>init</b>(K)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of HashNode</th><tr>
+</table>
+<a name="PROP_HashNode_next_item"></a><h3>next_item</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private fun <b>next_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode_next_item__eq"></a><h3>next_item=</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private fun <b>next_item=</b>(nullable N)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode_prev_item"></a><h3>prev_item</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private fun <b>prev_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode_prev_item__eq"></a><h3>prev_item=</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private fun <b>prev_item=</b>(nullable N)</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of HashNode</th><tr>
+</table>
+<a name="PROP_HashNode__key"></a><h3>_key</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private var <b>_key</b>: K</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode__next_in_bucklet"></a><h3>_next_in_bucklet</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private var <b>_next_in_bucklet</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode__next_item"></a><h3>_next_item</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private var <b>_next_item</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode__prev_in_bucklet"></a><h3>_prev_in_bucklet</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private var <b>_prev_in_bucklet</b>: nullable N</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_HashNode__prev_item"></a><h3>_prev_item</h3><p><small>hash_collection::<a href="#CLASS_HashNode">HashNode</a>::</small><br/>private var <b>_prev_item</b>: nullable N</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashSet"></a><h2>HashSet</h2><small>hash_collection::</small><br/>class <b>HashSet</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Set">Set</a>, <a href="#CLASS_HashCollection">HashCollection</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Set">Set</a>, <a href="abstract_collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_HashCollection">HashCollection</a>, <a href="abstract_collection.html#CLASS_Collection">Collection</a>, <a href="array.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashSet</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashSet_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashSet</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashCollection">HashCollection</a></small></td><td><small><a href="#PROP_HashCollection_enlarge">enlarge</a>, <a href="#PROP_HashCollection_first_item">first_item</a>, <a href="#PROP_HashCollection_index_at">index_at</a>, <a href="#PROP_HashCollection_node_at">node_at</a>, <a href="#PROP_HashCollection_node_at_idx">node_at_idx</a>, <a href="#PROP_HashCollection_raz">raz</a>, <a href="#PROP_HashCollection_remove_node">remove_node</a>, <a href="#PROP_HashCollection_store">store</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_ArrayCapable_calloc_array">calloc_array</a>, <a href="array.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_SimpleCollection_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Set_count">count</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Set_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashSet</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashCollection">HashCollection</a></small></td><td><small><a href="#PROP_HashCollection__array">_array</a>, <a href="#PROP_HashCollection__capacity">_capacity</a>, <a href="#PROP_HashCollection__first_item">_first_item</a>, <a href="#PROP_HashCollection__last_accessed_key">_last_accessed_key</a>, <a href="#PROP_HashCollection__last_accessed_node">_last_accessed_node</a>, <a href="#PROP_HashCollection__last_item">_last_item</a>, <a href="#PROP_HashCollection__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashSet</th><tr>
+</table>
+<a name="PROP_HashSet_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashSet">HashSet</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashSetIterator"></a><h2>HashSetIterator</h2><small>hash_collection::</small><br/>class <b>HashSetIterator</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Iterator">Iterator</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashSetIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashSetIterator_init">init</a></b>(<a href="#CLASS_HashSet">HashSet</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashSetIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_Iterator_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashSetIterator</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_HashSetIterator__node">_node</a></b>: nullable HashSetNode[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The position in the internal map storage
+</td></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_HashSetIterator__set">_set</a></b>: <a href="#CLASS_HashSet">HashSet</a>[E]<br/>&nbsp;&nbsp;&nbsp;&nbsp; The set to iterate on
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashSetIterator</th><tr>
+</table>
+<a name="PROP_HashSetIterator_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashSetIterator">HashSetIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_HashSet">HashSet</a>[E])</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of HashSetIterator</th><tr>
+</table>
+<a name="PROP_HashSetIterator__node"></a><h3>_node</h3><p><small>hash_collection::<a href="#CLASS_HashSetIterator">HashSetIterator</a>::</small><br/>var <b>_node</b>: nullable HashSetNode[E]</p>
+<blockquote><pre> The position in the internal map storage
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_HashSetIterator__set"></a><h3>_set</h3><p><small>hash_collection::<a href="#CLASS_HashSetIterator">HashSetIterator</a>::</small><br/>var <b>_set</b>: <a href="#CLASS_HashSet">HashSet</a>[E]</p>
+<blockquote><pre> The set to iterate on
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_HashSetNode"></a><h2>HashSetNode</h2><small>hash_collection::</small><br/>class <b>HashSetNode</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_HashNode">HashNode</a>
+<dt>All superclasses: <dd><a href="#CLASS_HashNode">HashNode</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of HashSetNode</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode_N">N</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of HashSetNode</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_HashSetNode_init">init</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of HashSetNode</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode_next_item">next_item</a>, <a href="#PROP_HashNode_next_item__eq">next_item=</a>, <a href="#PROP_HashNode_prev_item">prev_item</a>, <a href="#PROP_HashNode_prev_item__eq">prev_item=</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of HashSetNode</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_HashNode">HashNode</a></small></td><td><small><a href="#PROP_HashNode__key">_key</a>, <a href="#PROP_HashNode__next_in_bucklet">_next_in_bucklet</a>, <a href="#PROP_HashNode__next_item">_next_item</a>, <a href="#PROP_HashNode__prev_in_bucklet">_prev_in_bucklet</a>, <a href="#PROP_HashNode__prev_item">_prev_item</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of HashSetNode</th><tr>
+</table>
+<a name="PROP_HashSetNode_init"></a><h3>init</h3><p><small>hash_collection::<a href="#CLASS_HashSetNode">HashSetNode</a>::</small><br/>init <b>init</b>(E)</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+</body></html>

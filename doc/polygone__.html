@@ -1,0 +1,506 @@
+<html><head><title>Module polygone</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="polygone.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module polygone</h1>
+<dl><br/>module <b>polygone</b><br/>
+<dt>Imported modules: <dd><a href="figure.html">figure</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of polygone</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Carre">Carre</a></b><br/> Classe Carre
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Losange">Losange</a></b><br/> Classe Losange
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Parallelogramme">Parallelogramme</a></b><br/> Classe Parallelogramme
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Polygone">Polygone</a></b><br/> Classe Polygone
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Quadrilatere">Quadrilatere</a></b><br/> Classe Quadrilatere
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Rectangle">Rectangle</a></b><br/> Classe Rectangle
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Triangle">Triangle</a></b><br/> Classe Triangle
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of polygone</big></th><tr>
+</table>
+<a name="CLASS_Carre"></a><h2>Carre</h2><small>polygone::</small><br/>class <b>Carre</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Losange">Losange</a>, <a href="#CLASS_Rectangle">Rectangle</a>
+<dt>All superclasses: <dd><a href="#CLASS_Losange">Losange</a>, <a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>, <a href="#CLASS_Quadrilatere">Quadrilatere</a>, <a href="#CLASS_Parallelogramme">Parallelogramme</a>, <a href="#CLASS_Rectangle">Rectangle</a>
+</dl>
+<pre> Classe Carre
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Carre</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Carre_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un Carre a l'aide de ses quatres Sommmets. Une mauvaise utilisation leve une exeption
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Carre</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Carre___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de comparer un Objet Carre avec un objet de la bibliotheque
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Carre_aire">aire</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Calcule l'aire d'un carre
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Carre_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Rectangle
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Losange">Losange</a></small></td><td><small><a href="#PROP_Losange___eqeq">==</a>, <a href="#PROP_Losange_aire">aire</a>, <a href="#PROP_Losange_cercleInscrit">cercleInscrit</a>, <a href="#PROP_Losange_rectangleInscrit">rectangleInscrit</a>, <a href="#PROP_Losange_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Quadrilatere">Quadrilatere</a></small></td><td><small><a href="#PROP_Quadrilatere___eqeq">==</a>, <a href="#PROP_Quadrilatere_diagonales">diagonales</a>, <a href="#PROP_Quadrilatere_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Parallelogramme">Parallelogramme</a></small></td><td><small><a href="#PROP_Parallelogramme_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Rectangle">Rectangle</a></small></td><td><small><a href="#PROP_Rectangle___eqeq">==</a>, <a href="#PROP_Rectangle_aire">aire</a>, <a href="#PROP_Rectangle_cercleCirconscrit">cercleCirconscrit</a>, <a href="#PROP_Rectangle_losangeInscrit">losangeInscrit</a>, <a href="#PROP_Rectangle_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Carre</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Carre</th><tr>
+</table>
+<a name="PROP_Carre_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Carre">Carre</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un Carre a l'aide de ses quatres Sommmets. Une mauvaise utilisation leve une exeption
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Carre</th><tr>
+</table>
+<a name="PROP_Carre___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Carre">Carre</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permet de comparer un Objet Carre avec un objet de la bibliotheque
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Carre_aire"></a><h3>aire</h3><p><small>polygone::<a href="#CLASS_Carre">Carre</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>aire</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Calcule l'aire d'un carre
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Carre_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Carre">Carre</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Rectangle
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Losange"></a><h2>Losange</h2><small>polygone::</small><br/>class <b>Losange</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Parallelogramme">Parallelogramme</a>
+<dt>All superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>, <a href="#CLASS_Quadrilatere">Quadrilatere</a>, <a href="#CLASS_Parallelogramme">Parallelogramme</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Carre">Carre</a>
+</dl>
+<pre> Classe Losange
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Losange</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Losange_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un Losange a l'aide des valeurs de ses quatres sommets. Une mauvaise utilisation leve une exeption.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Losange</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Losange___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de comparer un objet Losange avec objet de la bibliotheque.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Losange_aire">aire</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Calcule l'aire d'un Cercle
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Losange_cercleInscrit">cercleInscrit</a></b>: <a href="figure.html#CLASS_Cercle">Cercle</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Definit le Cercle inscrit d'un Losange
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Losange_rectangleInscrit">rectangleInscrit</a></b>: <a href="#CLASS_Rectangle">Rectangle</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Definit le Rectangle inscrit d'un Losange
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Losange_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Losange
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Quadrilatere">Quadrilatere</a></small></td><td><small><a href="#PROP_Quadrilatere___eqeq">==</a>, <a href="#PROP_Quadrilatere_diagonales">diagonales</a>, <a href="#PROP_Quadrilatere_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Parallelogramme">Parallelogramme</a></small></td><td><small><a href="#PROP_Parallelogramme_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Losange</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Losange</th><tr>
+</table>
+<a name="PROP_Losange_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un Losange a l'aide des valeurs de ses quatres sommets. Une mauvaise utilisation leve une exeption.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Losange</th><tr>
+</table>
+<a name="PROP_Losange___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permet de comparer un objet Losange avec objet de la bibliotheque.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Losange_aire"></a><h3>aire</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>aire</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Calcule l'aire d'un Cercle
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Losange_cercleInscrit"></a><h3>cercleInscrit</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>fun <b>cercleInscrit</b>: <a href="figure.html#CLASS_Cercle">Cercle</a></p>
+<blockquote><pre> Definit le Cercle inscrit d'un Losange
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Losange_rectangleInscrit"></a><h3>rectangleInscrit</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>fun <b>rectangleInscrit</b>: <a href="#CLASS_Rectangle">Rectangle</a></p>
+<blockquote><pre> Definit le Rectangle inscrit d'un Losange
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Losange_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Losange">Losange</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Losange
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Parallelogramme"></a><h2>Parallelogramme</h2><small>polygone::</small><br/>class <b>Parallelogramme</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Quadrilatere">Quadrilatere</a>
+<dt>All superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>, <a href="#CLASS_Quadrilatere">Quadrilatere</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Losange">Losange</a>, <a href="#CLASS_Rectangle">Rectangle</a>
+</dl>
+<pre> Classe Parallelogramme
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Parallelogramme</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Parallelogramme_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Parallelogramme</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Parallelogramme_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Parallelogramme
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Quadrilatere">Quadrilatere</a></small></td><td><small><a href="#PROP_Quadrilatere___eqeq">==</a>, <a href="#PROP_Quadrilatere_diagonales">diagonales</a>, <a href="#PROP_Quadrilatere_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Parallelogramme</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Parallelogramme</th><tr>
+</table>
+<a name="PROP_Parallelogramme_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Parallelogramme">Parallelogramme</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Parallelogramme</th><tr>
+</table>
+<a name="PROP_Parallelogramme_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Parallelogramme">Parallelogramme</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Parallelogramme
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Polygone"></a><h2>Polygone</h2><small>polygone::</small><br/>class <b>Polygone</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="figure.html#CLASS_Figure">Figure</a>
+<dt>All superclasses: <dd><a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Triangle">Triangle</a>, <a href="#CLASS_Quadrilatere">Quadrilatere</a>
+</dl>
+<pre> Classe Polygone
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Polygone</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Polygone_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un Polygone a l'aide de Point qui composeront ses sommets
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Polygone</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Polygone___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permmet de comparer un objet Polygone avec un objet de la bibliotheque
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Polygone_aire">aire</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Il est tres difficile de calculer l'aire d'un polygone de part sa complexite.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Polygone_cotes">cotes</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Segment">Segment</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Retourne l'ensemble des cotes d'un Polygone
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Polygone_perimetre">perimetre</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de calculer le perimetre d'un Polygone
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Polygone_sommets">sommets</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Coordonnee d'un Polygone sous forme d'une liste de point.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Polygone_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Polygone
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Polygone</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Polygone__sommets">_sommets</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Coordonnee d'un Polygone sous forme d'une liste de point.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Polygone</th><tr>
+</table>
+<a name="PROP_Polygone_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un Polygone a l'aide de Point qui composeront ses sommets
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Polygone</th><tr>
+</table>
+<a name="PROP_Polygone___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permmet de comparer un objet Polygone avec un objet de la bibliotheque
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Polygone_aire"></a><h3>aire</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>aire</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Il est tres difficile de calculer l'aire d'un polygone de part sa complexite.
+ On considere l'aire egale a 0 jusqu'a ce qu'il soit possible de la calculer
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Polygone_cotes"></a><h3>cotes</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>fun <b>cotes</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Segment">Segment</a>]</p>
+<blockquote><pre> Retourne l'ensemble des cotes d'un Polygone
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Polygone_perimetre"></a><h3>perimetre</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>perimetre</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Permet de calculer le perimetre d'un Polygone
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Polygone_sommets"></a><h3>sommets</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>fun <b>sommets</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>]</p>
+<blockquote><pre> Coordonnee d'un Polygone sous forme d'une liste de point.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Polygone_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Polygone
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Polygone</th><tr>
+</table>
+<a name="PROP_Polygone__sommets"></a><h3>_sommets</h3><p><small>polygone::<a href="#CLASS_Polygone">Polygone</a>::</small><br/>var <b>_sommets</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>]</p>
+<blockquote><pre> Coordonnee d'un Polygone sous forme d'une liste de point.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Quadrilatere"></a><h2>Quadrilatere</h2><small>polygone::</small><br/>class <b>Quadrilatere</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>
+<dt>All superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Parallelogramme">Parallelogramme</a>
+</dl>
+<pre> Classe Quadrilatere
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Quadrilatere</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Quadrilatere_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un Quadrilatere a l'aide des valeurs de ses quatre sommets. Une mauvaise construction leve une exeption.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Quadrilatere</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Quadrilatere___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de comparer un objet Quadrilatere avec un objet de la bibliotheque
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Quadrilatere_diagonales">diagonales</a></b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Segment">Segment</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp; Definit les diagonales d'un Quadrilatere
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Quadrilatere_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Quadrilatere
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Quadrilatere</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Quadrilatere</th><tr>
+</table>
+<a name="PROP_Quadrilatere_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Quadrilatere">Quadrilatere</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un Quadrilatere a l'aide des valeurs de ses quatre sommets. Une mauvaise construction leve une exeption.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Quadrilatere</th><tr>
+</table>
+<a name="PROP_Quadrilatere___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Quadrilatere">Quadrilatere</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permet de comparer un objet Quadrilatere avec un objet de la bibliotheque
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Quadrilatere_diagonales"></a><h3>diagonales</h3><p><small>polygone::<a href="#CLASS_Quadrilatere">Quadrilatere</a>::</small><br/>fun <b>diagonales</b>: <a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Segment">Segment</a>]</p>
+<blockquote><pre> Definit les diagonales d'un Quadrilatere
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Quadrilatere_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Quadrilatere">Quadrilatere</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Quadrilatere
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Rectangle"></a><h2>Rectangle</h2><small>polygone::</small><br/>class <b>Rectangle</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Parallelogramme">Parallelogramme</a>
+<dt>All superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>, <a href="#CLASS_Quadrilatere">Quadrilatere</a>, <a href="#CLASS_Parallelogramme">Parallelogramme</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Carre">Carre</a>
+</dl>
+<pre> Classe Rectangle
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Rectangle</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Rectangle_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un Rectangle a l'aide de ses quatres sommets.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Rectangle</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Rectangle___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de comparer un objet Rectangle avec un objet de la bibliotheque
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Rectangle_aire">aire</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Calcule l'aire d'un Rectangle
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Rectangle_cercleCirconscrit">cercleCirconscrit</a></b>: <a href="figure.html#CLASS_Cercle">Cercle</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Definit le Cercle circonscrit d'un Rectangle
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Rectangle_losangeInscrit">losangeInscrit</a></b>: <a href="#CLASS_Losange">Losange</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Definit le Losange inscrit d'un Rectangle
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Rectangle_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Rectangle
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Quadrilatere">Quadrilatere</a></small></td><td><small><a href="#PROP_Quadrilatere___eqeq">==</a>, <a href="#PROP_Quadrilatere_diagonales">diagonales</a>, <a href="#PROP_Quadrilatere_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Parallelogramme">Parallelogramme</a></small></td><td><small><a href="#PROP_Parallelogramme_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Rectangle</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Rectangle</th><tr>
+</table>
+<a name="PROP_Rectangle_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un Rectangle a l'aide de ses quatres sommets.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Rectangle</th><tr>
+</table>
+<a name="PROP_Rectangle___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permet de comparer un objet Rectangle avec un objet de la bibliotheque
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Rectangle_aire"></a><h3>aire</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>aire</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Calcule l'aire d'un Rectangle
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Rectangle_cercleCirconscrit"></a><h3>cercleCirconscrit</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>fun <b>cercleCirconscrit</b>: <a href="figure.html#CLASS_Cercle">Cercle</a></p>
+<blockquote><pre> Definit le Cercle circonscrit d'un Rectangle
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Rectangle_losangeInscrit"></a><h3>losangeInscrit</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>fun <b>losangeInscrit</b>: <a href="#CLASS_Losange">Losange</a></p>
+<blockquote><pre> Definit le Losange inscrit d'un Rectangle
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Rectangle_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Rectangle">Rectangle</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Rectangle
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Triangle"></a><h2>Triangle</h2><small>polygone::</small><br/>class <b>Triangle</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>
+<dt>All superclasses: <dd><a href="#CLASS_Polygone">Polygone</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="standard.html#CLASS_Object">Object</a>
+</dl>
+<pre> Classe Triangle
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Triangle</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Triangle_init">init</a></b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Construit un triangle a l'aide de ses trois sommets. Une mauvaise construction leve une exeption.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Triangle</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Triangle___eqeq">==</a></b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de comaparer un objet Triangle avec un objet de la bibliotheque
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="figure.html#CLASS_Figure">Figure</a>::</td><td><b><a href="#PROP_Triangle_aire">aire</a></b>: <a href="standard.html#CLASS_Float">Float</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Calcule de l'aire d'un triangle, a l'aide de la formule du Heron.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="standard.html#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Triangle_to_s">to_s</a></b>: <a href="standard.html#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Permet de formater l'affichage de l'objet Triangle
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone___eqeq">==</a>, <a href="#PROP_Polygone_aire">aire</a>, <a href="#PROP_Polygone_cotes">cotes</a>, <a href="#PROP_Polygone_perimetre">perimetre</a>, <a href="#PROP_Polygone_sommets">sommets</a>, <a href="#PROP_Polygone_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="figure.html">figure</a></small></td><td><small><a href="figure.html#PROP_Figure_aire">aire</a>, <a href="figure.html#PROP_Figure_perimetre">perimetre</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Object___neq">!=</a>, <a href="standard.html#PROP_Object___eqeq">==</a>, <a href="standard.html#PROP_Object_args">args</a>, <a href="standard.html#PROP_Object_atan2">atan2</a>, <a href="standard.html#PROP_Object_exit">exit</a>, <a href="standard.html#PROP_Object_get_time">get_time</a>, <a href="standard.html#PROP_Object_getc">getc</a>, <a href="standard.html#PROP_Object_gets">gets</a>, <a href="standard.html#PROP_Object_hash">hash</a>, <a href="standard.html#PROP_Object_inspect">inspect</a>, <a href="standard.html#PROP_Object_inspect_head">inspect_head</a>, <a href="standard.html#PROP_Object_is_same_type">is_same_type</a>, <a href="standard.html#PROP_Object_object_id">object_id</a>, <a href="standard.html#PROP_Object_output">output</a>, <a href="standard.html#PROP_Object_pi">pi</a>, <a href="standard.html#PROP_Object_print">print</a>, <a href="standard.html#PROP_Object_printn">printn</a>, <a href="standard.html#PROP_Object_srand">srand</a>, <a href="standard.html#PROP_Object_srand_from">srand_from</a>, <a href="standard.html#PROP_Object_stderr">stderr</a>, <a href="standard.html#PROP_Object_stdin">stdin</a>, <a href="standard.html#PROP_Object_stdout">stdout</a>, <a href="standard.html#PROP_Object_sys">sys</a>, <a href="standard.html#PROP_Object_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Triangle</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Polygone">Polygone</a></small></td><td><small><a href="#PROP_Polygone__sommets">_sommets</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Triangle</th><tr>
+</table>
+<a name="PROP_Triangle_init"></a><h3>init</h3><p><small>polygone::<a href="#CLASS_Triangle">Triangle</a>::</small><br/>init <b>init</b>(<a href="collection.html#CLASS_Array">Array</a>[<a href="figure.html#CLASS_Point">Point</a>])</p>
+<blockquote><pre> Construit un triangle a l'aide de ses trois sommets. Une mauvaise construction leve une exeption.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Triangle</th><tr>
+</table>
+<a name="PROP_Triangle___eqeq"></a><h3>==</h3><p><small>polygone::<a href="#CLASS_Triangle">Triangle</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>==</b>(nullable Object): <a href="standard.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Permet de comaparer un objet Triangle avec un objet de la bibliotheque
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Triangle_aire"></a><h3>aire</h3><p><small>polygone::<a href="#CLASS_Triangle">Triangle</a>::</small><br/>redef fun <a href="figure.html#CLASS_Figure">Figure</a>:: <b>aire</b>: <a href="standard.html#CLASS_Float">Float</a></p>
+<blockquote><pre> Calcule de l'aire d'un triangle, a l'aide de la formule du Heron.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Triangle_to_s"></a><h3>to_s</h3><p><small>polygone::<a href="#CLASS_Triangle">Triangle</a>::</small><br/>redef fun <a href="standard.html#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="standard.html#CLASS_String">String</a></p>
+<blockquote><pre> Permet de formater l'affichage de l'objet Triangle
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>

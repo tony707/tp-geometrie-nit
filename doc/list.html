@@ -1,0 +1,196 @@
+<html><head><title>Module list</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <b>Public</b>&nbsp; <strike><b>Inside</b></strike>&nbsp; <a href="list__.html"><b>Intrude</b></a>&nbsp; <br/><h1>Module list</h1>
+<dl><a href="standard.html">standard</a>::<a href="collection.html">collection</a>::<br/>module <b>list</b><br/>
+<dt>Imported modules: <dd><a href="abstract_collection.html">abstract_collection</a>
+</dl>
+<pre> This module handle double linked lists
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of list</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_List">List</a></b>[E: nullable Object]<br/> Double linked lists.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ListIterator">ListIterator</a></b>[E: nullable Object]<br/> This is the iterator class of List
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of list</big></th><tr>
+</table>
+<a name="CLASS_List"></a><h2>List</h2><small>list::</small><br/>class <b>List</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_Sequence">Sequence</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_Sequence">Sequence</a>, <a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="abstract_collection.html#CLASS_Map">Map</a>, <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>, <a href="abstract_collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="abstract_collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="abstract_collection.html#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Double linked lists.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of List</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_List_from">from</a></b>(<a href="abstract_collection.html#CLASS_Collection">Collection</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Build a list filled with the items of `coll'.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_List_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Build an empty list.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of List</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>::</td><td><b><a href="#PROP_List___bra">[]</a></b>(<a href="kernel.html#CLASS_Int">Int</a>): E<br/>&nbsp;&nbsp;&nbsp;&nbsp; Access
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_List_first">first</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_first__eq">first=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_List_has">has</a></b>(E): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_List_is_empty">is_empty</a></b>: <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>::</td><td><b><a href="#PROP_List_last">last</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_last__eq">last=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_List_length">length</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; O(n)
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_List_link">link</a></b>(<a href="#CLASS_List">List</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Append `l' to `self' but clear `l'.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_pop">pop</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_push">push</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_shift">shift</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>::</td><td><b><a href="#PROP_List_unshift">unshift</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; O(1)
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_MapRead___bra">[]</a>, <a href="abstract_collection.html#PROP_Map___braeq">[]=</a>, <a href="abstract_collection.html#PROP_Sequence_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add">add</a>, <a href="abstract_collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="abstract_collection.html#PROP_Sequence_append">append</a>, <a href="abstract_collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="abstract_collection.html#PROP_Collection_count">count</a>, <a href="abstract_collection.html#PROP_SequenceRead_first">first</a>, <a href="abstract_collection.html#PROP_Collection_first">first</a>, <a href="abstract_collection.html#PROP_Sequence_first__eq">first=</a>, <a href="abstract_collection.html#PROP_Collection_has">has</a>, <a href="abstract_collection.html#PROP_MapRead_has_key">has_key</a>, <a href="abstract_collection.html#PROP_Collection_has_only">has_only</a>, <a href="abstract_collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="abstract_collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="abstract_collection.html#PROP_Collection_iterate">iterate</a>, <a href="abstract_collection.html#PROP_Collection_iterator">iterator</a>, <a href="abstract_collection.html#PROP_SequenceRead_last">last</a>, <a href="abstract_collection.html#PROP_Sequence_last__eq">last=</a>, <a href="abstract_collection.html#PROP_Collection_length">length</a>, <a href="abstract_collection.html#PROP_Sequence_pop">pop</a>, <a href="abstract_collection.html#PROP_Sequence_push">push</a>, <a href="abstract_collection.html#PROP_Map_recover_with">recover_with</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="abstract_collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="abstract_collection.html#PROP_Map_remove_at">remove_at</a>, <a href="abstract_collection.html#PROP_Sequence_shift">shift</a>, <a href="abstract_collection.html#PROP_Sequence_unshift">unshift</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of List</th><tr>
+</table>
+<a name="PROP_List_from"></a><h3>from</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>init <b>from</b>(<a href="abstract_collection.html#CLASS_Collection">Collection</a>[E])</p>
+<blockquote><pre> Build a list filled with the items of `coll'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_init"></a><h3>init</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>init <b>init</b></p>
+<blockquote><pre> Build an empty list.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of List</th><tr>
+</table>
+<a name="PROP_List___bra"></a><h3>[]</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_MapRead">MapRead</a>:: <b>[]</b>(<a href="kernel.html#CLASS_Int">Int</a>): E</p>
+<blockquote><pre> Access
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_first"></a><h3>first</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>:: <b>first</b>: E</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_first__eq"></a><h3>first=</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>first=</b>(E)</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_has"></a><h3>has</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>:: <b>has</b>(E): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_is_empty"></a><h3>is_empty</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>:: <b>is_empty</b>: <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_last"></a><h3>last</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_SequenceRead">SequenceRead</a>:: <b>last</b>: E</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_last__eq"></a><h3>last=</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>last=</b>(E)</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_length"></a><h3>length</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Collection">Collection</a>:: <b>length</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> O(n)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_link"></a><h3>link</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>fun <b>link</b>(<a href="#CLASS_List">List</a>[E])</p>
+<blockquote><pre> Append `l' to `self' but clear `l'.
+#
+ O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_pop"></a><h3>pop</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>pop</b>: E</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_push"></a><h3>push</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>push</b>(E)</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_shift"></a><h3>shift</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>shift</b>: E</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_List_unshift"></a><h3>unshift</h3><p><small>list::<a href="#CLASS_List">List</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_Sequence">Sequence</a>:: <b>unshift</b>(E)</p>
+<blockquote><pre> O(1)
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ListIterator"></a><h2>ListIterator</h2><small>list::</small><br/>class <b>ListIterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>
+<dt>All superclasses: <dd><a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>, <a href="abstract_collection.html#CLASS_MapIterator">MapIterator</a>, <a href="abstract_collection.html#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> This is the iterator class of List
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ListIterator</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_ListIterator_delete">delete</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove the current item
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>::</td><td><b><a href="#PROP_ListIterator_index">index</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The index of the current node
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_ListIterator_insert_before">insert_before</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Insert before the current item
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_ListIterator_item__eq">item=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="abstract_collection.html">abstract_collection</a></small></td><td><small><a href="abstract_collection.html#PROP_IndexedIterator_index">index</a>, <a href="abstract_collection.html#PROP_Iterator_is_ok">is_ok</a>, <a href="abstract_collection.html#PROP_Iterator_item">item</a>, <a href="abstract_collection.html#PROP_MapIterator_key">key</a>, <a href="abstract_collection.html#PROP_IndexedIterator_key">key</a>, <a href="abstract_collection.html#PROP_Iterator_next">next</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of ListIterator</th><tr>
+</table>
+<a name="PROP_ListIterator_delete"></a><h3>delete</h3><p><small>list::<a href="#CLASS_ListIterator">ListIterator</a>::</small><br/>fun <b>delete</b></p>
+<blockquote><pre> Remove the current item
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ListIterator_index"></a><h3>index</h3><p><small>list::<a href="#CLASS_ListIterator">ListIterator</a>::</small><br/>redef fun <a href="abstract_collection.html#CLASS_IndexedIterator">IndexedIterator</a>:: <b>index</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> The index of the current node
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ListIterator_insert_before"></a><h3>insert_before</h3><p><small>list::<a href="#CLASS_ListIterator">ListIterator</a>::</small><br/>fun <b>insert_before</b>(E)</p>
+<blockquote><pre> Insert before the current item
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_ListIterator_item__eq"></a><h3>item=</h3><p><small>list::<a href="#CLASS_ListIterator">ListIterator</a>::</small><br/>fun <b>item=</b>(E)</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+</body></html>

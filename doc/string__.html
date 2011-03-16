@@ -1,0 +1,710 @@
+<html><head><title>Module string</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <a href="string.html"><b>Public</b></a>&nbsp; <strike><b>Inside</b></strike>&nbsp; <b>Intrude</b>&nbsp; <br/><h1>Module string</h1>
+<dl><a href="standard.html">standard</a>::<br/>module <b>string</b><br/>
+<dt>Intruded modules: <dd><a href="collection.html">collection</a>
+<dt>Imported modules: <dd><a href="range.html">range</a>, <a href="list.html">list</a>, <a href="sorter.html">sorter</a>, <a href="hash_collection.html">hash_collection</a>
+</dl>
+<pre> This module is about character strings.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of string</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_AbstractString">AbstractString</a></b><br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">redef class <a href="collection.html">collection</a>::</td><td><b><a href="#CLASS_Array">Array</a></b>[E: nullable Object]<br/> Resizeable one dimention array of objects.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Buffer">Buffer</a></b><br/> Strings are arrays of characters.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="collection.html">collection</a>::</td><td><b><a href="#CLASS_Collection">Collection</a></b>[E: nullable Object]<br/> The root of the collection hierarchy.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="kernel.html">kernel</a>::</td><td><b><a href="#CLASS_Float">Float</a></b><br/> Native floating point numbers.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="kernel.html">kernel</a>::</td><td><b><a href="#CLASS_Int">Int</a></b><br/> Native integer numbers.
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="collection.html">collection</a>::</td><td><b><a href="#CLASS_Map">Map</a></b>[K: <a href="#CLASS_Object">Object</a>V: nullable Object]<br/> Maps are associative collections: `key' -> `item'.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_NativeString">NativeString</a></b><br/> Native strings are simple C char *
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="kernel.html">kernel</a>::</td><td><b><a href="#CLASS_Object">Object</a></b><br/> The root of the class hierarchy.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_String">String</a></b><br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_StringCapable">StringCapable</a></b><br/> StringCapable objects can create native strings
+</td><tr>
+<tr><td width="20%" align="right">redef class <a href="kernel.html">kernel</a>::</td><td><b><a href="#CLASS_Sys">Sys</a></b><br/> The main class of the program.
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of string</big></th><tr>
+</table>
+<a name="CLASS_AbstractString"></a><h2>AbstractString</h2><small>string::</small><br/>class <b>AbstractString</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>
+<dt>All superclasses: <dd><a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_String">String</a>, <a href="#CLASS_Buffer">Buffer</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of AbstractString</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_a_to">a_to</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; If `self' contains only digits and letters, return the corresponding integer in a given base
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_has_prefix">has_prefix</a></b>(<a href="#CLASS_String">String</a>): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Is this string prefixed by 'prefix'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_has_substring">has_substring</a></b>(<a href="#CLASS_String">String</a>, <a href="#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; is this string a substring of the 'of' string from pos 'pos'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_has_suffix">has_suffix</a></b>(<a href="#CLASS_String">String</a>): <a href="kernel.html#CLASS_Bool">Bool</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Is this string suffixed by 'suffix'
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_AbstractString_items">items</a></b>: <a href="#CLASS_NativeString">NativeString</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_substring">substring</a></b>(<a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a substring.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_substring_from">substring_from</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a substring with the string beginning at the 'from' position
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_to_hex">to_hex</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; If `self' contains only digits and alpha <= 'f', return the corresponding integer.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_to_i">to_i</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; If `self' contains only digits, return the corresponding integer
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_to_lower">to_lower</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; String to lower case
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_AbstractString_to_upper">to_upper</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; String to upper case
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_join">join</a>, <a href="#PROP_Collection_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead___eqeq">==</a>, <a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_SequenceRead_first">first</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_SequenceRead_last">last</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_reversed">reversed</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of AbstractString</th></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_AbstractString__items">_items</a></b>: <a href="#CLASS_NativeString">NativeString</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of AbstractString</th><tr>
+</table>
+<a name="PROP_AbstractString_a_to"></a><h3>a_to</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>a_to</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> If `self' contains only digits and letters, return the corresponding integer in a given base
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_has_prefix"></a><h3>has_prefix</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>has_prefix</b>(<a href="#CLASS_String">String</a>): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Is this string prefixed by 'prefix'
+
+ "abc".is_prefix("abcd") 	# --> true
+ "bc".is_prefix("abcd") 	# --> false
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_has_substring"></a><h3>has_substring</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>has_substring</b>(<a href="#CLASS_String">String</a>, <a href="#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> is this string a substring of the 'of' string from pos 'pos'
+
+ "bc".is_substring("abcd",1) 	# --> true
+ "bc".is_substring("abcd",2) 	# --> false
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_has_suffix"></a><h3>has_suffix</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>has_suffix</b>(<a href="#CLASS_String">String</a>): <a href="kernel.html#CLASS_Bool">Bool</a></p>
+<blockquote><pre> Is this string suffixed by 'suffix'
+
+ "abcd".has_suffix("abc") 	# --> false
+ "abcd".has_suffix("bcd") 	# --> true
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_items"></a><h3>items</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>private fun <b>items</b>: <a href="#CLASS_NativeString">NativeString</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_AbstractString_substring"></a><h3>substring</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>substring</b>(<a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Create a substring.
+
+ "abcd".substring(1, 2) 	# --> "bc"
+ "abcd".substring(-1, 2)	# --> "a"
+ "abcd".substring(1, 0)     # --> ""
+ "abcd".substring(2, 5)     # --> "cd"
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_substring_from"></a><h3>substring_from</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>substring_from</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Create a substring with the string beginning at the 'from' position
+
+ "abcd".substring(1) 	# --> "bcd"
+ "abcd".substring(-1)	# --> "abcd"
+ "abcd".substring(2)     # --> "cd"
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_to_hex"></a><h3>to_hex</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>to_hex</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> If `self' contains only digits and alpha <= 'f', return the corresponding integer.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_to_i"></a><h3>to_i</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>to_i</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> If `self' contains only digits, return the corresponding integer
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_to_lower"></a><h3>to_lower</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>to_lower</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> String to lower case
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_AbstractString_to_upper"></a><h3>to_upper</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>fun <b>to_upper</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> String to upper case
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of AbstractString</th><tr>
+</table>
+<a name="PROP_AbstractString__items"></a><h3>_items</h3><p><small>string::<a href="#CLASS_AbstractString">AbstractString</a>::</small><br/>private var <b>_items</b>: <a href="#CLASS_NativeString">NativeString</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Array"></a><h2>Array</h2><small>string::</small><br/>redef class <a href="collection.html">collection</a>::<b>Array</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Refine Array from: <dd><a href="collection.html">collection</a>
+<dt>Direct superclasses: <dd><a href="collection.html#CLASS_AbstractArray">AbstractArray</a>, <a href="collection.html#CLASS_ArrayCapable">ArrayCapable</a>
+<dt>All superclasses: <dd><a href="collection.html#CLASS_AbstractArray">AbstractArray</a>, <a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="collection.html#CLASS_Sequence">Sequence</a>, <a href="collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="#CLASS_Map">Map</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="collection.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="#CLASS_Object">Object</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Array</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Array_to_s">to_s</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Fast implementation
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Map">Map</a></small></td><td><small><a href="#PROP_Map_map_join">map_join</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_join">join</a>, <a href="#PROP_Collection_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead___eqeq">==</a>, <a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_Map___braeq">[]=</a>, <a href="collection.html#PROP_Sequence_add">add</a>, <a href="collection.html#PROP_SimpleCollection_add">add</a>, <a href="collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="collection.html#PROP_Sequence_append">append</a>, <a href="collection.html#PROP_ArrayCapable_calloc_array">calloc_array</a>, <a href="collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="collection.html#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_AbstractArray_enlarge">enlarge</a>, <a href="collection.html#PROP_SequenceRead_first">first</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_Sequence_first__eq">first=</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="collection.html#PROP_AbstractArray_insert">insert</a>, <a href="collection.html#PROP_Array_intern_items">intern_items</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_SequenceRead_last">last</a>, <a href="collection.html#PROP_Sequence_last__eq">last=</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_length">length</a>, <a href="collection.html#PROP_Sequence_pop">pop</a>, <a href="collection.html#PROP_Sequence_push">push</a>, <a href="collection.html#PROP_Map_recover_with">recover_with</a>, <a href="collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="collection.html#PROP_Map_remove_at">remove_at</a>, <a href="collection.html#PROP_AbstractArrayRead_reversed">reversed</a>, <a href="collection.html#PROP_Sequence_shift">shift</a>, <a href="collection.html#PROP_Array_sort">sort</a>, <a href="collection.html#PROP_Array_sub_sort">sub_sort</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a>, <a href="collection.html#PROP_Sequence_unshift">unshift</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Array</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_Array__capacity">_capacity</a>, <a href="collection.html#PROP_Array__items">_items</a>, <a href="collection.html#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Array</th><tr>
+</table>
+<a name="PROP_Array_to_s"></a><h3>to_s</h3><p><small>string::<a href="#CLASS_Array">Array</a>::</small><br/>redef fun <a href="#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Fast implementation
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Buffer"></a><h2>Buffer</h2><small>string::</small><br/>class <b>Buffer</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_AbstractString">AbstractString</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_StringCapable">StringCapable</a>, <a href="collection.html#CLASS_AbstractArray">AbstractArray</a>
+<dt>All superclasses: <dd><a href="#CLASS_AbstractString">AbstractString</a>, <a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="#CLASS_Object">Object</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_StringCapable">StringCapable</a>, <a href="collection.html#CLASS_AbstractArray">AbstractArray</a>, <a href="collection.html#CLASS_Sequence">Sequence</a>, <a href="#CLASS_Map">Map</a>, <a href="collection.html#CLASS_SimpleCollection">SimpleCollection</a>, <a href="collection.html#CLASS_RemovableCollection">RemovableCollection</a>
+</dl>
+<pre> Strings are arrays of characters.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Buffer</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Buffer</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Buffer_from">from</a></b>(<a href="#CLASS_String">String</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Buffer_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new empty string.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Buffer_with_capacity">with_capacity</a></b>(<a href="#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new empty string with a given capacity.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Buffer</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Buffer_capacity">capacity</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractString">AbstractString</a></small></td><td><small><a href="#PROP_AbstractString_a_to">a_to</a>, <a href="#PROP_AbstractString_has_prefix">has_prefix</a>, <a href="#PROP_AbstractString_has_substring">has_substring</a>, <a href="#PROP_AbstractString_has_suffix">has_suffix</a>, <a href="#PROP_AbstractString_items">items</a>, <a href="#PROP_AbstractString_substring">substring</a>, <a href="#PROP_AbstractString_substring_from">substring_from</a>, <a href="#PROP_AbstractString_to_hex">to_hex</a>, <a href="#PROP_AbstractString_to_i">to_i</a>, <a href="#PROP_AbstractString_to_lower">to_lower</a>, <a href="#PROP_AbstractString_to_upper">to_upper</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_join">join</a>, <a href="#PROP_Collection_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_StringCapable">StringCapable</a></small></td><td><small><a href="#PROP_StringCapable_calloc_string">calloc_string</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Map">Map</a></small></td><td><small><a href="#PROP_Map_map_join">map_join</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead___eqeq">==</a>, <a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_Map___braeq">[]=</a>, <a href="collection.html#PROP_Sequence_add">add</a>, <a href="collection.html#PROP_SimpleCollection_add">add</a>, <a href="collection.html#PROP_SimpleCollection_add_all">add_all</a>, <a href="collection.html#PROP_Sequence_append">append</a>, <a href="collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="collection.html#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_AbstractArray_enlarge">enlarge</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_SequenceRead_first">first</a>, <a href="collection.html#PROP_Sequence_first__eq">first=</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="collection.html#PROP_AbstractArray_insert">insert</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_SequenceRead_last">last</a>, <a href="collection.html#PROP_Sequence_last__eq">last=</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_length">length</a>, <a href="collection.html#PROP_Sequence_pop">pop</a>, <a href="collection.html#PROP_Sequence_push">push</a>, <a href="collection.html#PROP_Map_recover_with">recover_with</a>, <a href="collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="collection.html#PROP_Map_remove_at">remove_at</a>, <a href="collection.html#PROP_AbstractArrayRead_reversed">reversed</a>, <a href="collection.html#PROP_Sequence_shift">shift</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a>, <a href="collection.html#PROP_Sequence_unshift">unshift</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Comparable___l"><</a>, <a href="kernel.html#PROP_Comparable___leq"><=</a>, <a href="kernel.html#PROP_Comparable___leqg"><=></a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Comparable___g">></a>, <a href="kernel.html#PROP_Comparable___geq">>=</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Comparable_is_between">is_between</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Comparable_max">max</a>, <a href="kernel.html#PROP_Comparable_min">min</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Buffer</th></tr>
+<tr><td width="20%" align="right">private var</td><td><b><a href="#PROP_Buffer__capacity">_capacity</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractString">AbstractString</a></small></td><td><small><a href="#PROP_AbstractString__items">_items</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Buffer</th><tr>
+</table>
+<a name="PROP_Buffer_from"></a><h3>from</h3><p><small>string::<a href="#CLASS_Buffer">Buffer</a>::</small><br/>init <b>from</b>(<a href="#CLASS_String">String</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Buffer_init"></a><h3>init</h3><p><small>string::<a href="#CLASS_Buffer">Buffer</a>::</small><br/>init <b>init</b></p>
+<blockquote><pre> Create a new empty string.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Buffer_with_capacity"></a><h3>with_capacity</h3><p><small>string::<a href="#CLASS_Buffer">Buffer</a>::</small><br/>init <b>with_capacity</b>(<a href="#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create a new empty string with a given capacity.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Buffer</th><tr>
+</table>
+<a name="PROP_Buffer_capacity"></a><h3>capacity</h3><p><small>string::<a href="#CLASS_Buffer">Buffer</a>::</small><br/>private fun <b>capacity</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Buffer</th><tr>
+</table>
+<a name="PROP_Buffer__capacity"></a><h3>_capacity</h3><p><small>string::<a href="#CLASS_Buffer">Buffer</a>::</small><br/>private var <b>_capacity</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Collection"></a><h2>Collection</h2><small>string::</small><br/>redef class <a href="collection.html">collection</a>::<b>Collection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Refine Collection from: <dd><a href="collection.html">collection</a>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="collection.html#CLASS_NaiveCollection">NaiveCollection</a>, <a href="collection.html#CLASS_Container">Container</a>, <a href="collection.html#CLASS_Range">Range</a>, <a href="collection.html#CLASS_HashCollection">HashCollection</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Collection</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_join">join</a></b>(<a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Concatenate and separate each elements with `sep'. 
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Collection_to_s">to_s</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Concatenate elements.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Collection</th><tr>
+</table>
+<a name="PROP_Collection_join"></a><h3>join</h3><p><small>string::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>join</b>(<a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Concatenate and separate each elements with `sep'. 
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_to_s"></a><h3>to_s</h3><p><small>string::<a href="#CLASS_Collection">Collection</a>::</small><br/>redef fun <a href="#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Concatenate elements.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Float"></a><h2>Float</h2><small>string::</small><br/>redef class <a href="kernel.html">kernel</a>::<b>Float</b>
+<blockquote>
+<dl>
+<dt>Refine Float from: <dd><a href="kernel.html">kernel</a>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="math.html">math</a>, <a href="utils.html">utils</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Float</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Float_to_precision">to_precision</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; `self' representation with `nb' digits after the '.'.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Float___star">*</a>, <a href="kernel.html#PROP_Float___plus">+</a>, <a href="kernel.html#PROP_Float___minus">-</a>, <a href="kernel.html#PROP_Float___slash">/</a>, <a href="kernel.html#PROP_Float___l"><</a>, <a href="kernel.html#PROP_Float___leq"><=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Float___g">></a>, <a href="kernel.html#PROP_Float___geq">>=</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a>, <a href="kernel.html#PROP_Float_to_i">to_i</a>, <a href="kernel.html#PROP_Float_unary__minus">unary -</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Float_acos">acos</a>, <a href="math.html#PROP_Float_asin">asin</a>, <a href="math.html#PROP_Float_atan">atan</a>, <a href="math.html#PROP_Float_cos">cos</a>, <a href="math.html#PROP_Float_exp">exp</a>, <a href="math.html#PROP_Float_log">log</a>, <a href="math.html#PROP_Float_pow">pow</a>, <a href="math.html#PROP_Float_rand">rand</a>, <a href="math.html#PROP_Float_sin">sin</a>, <a href="math.html#PROP_Float_sqrt">sqrt</a>, <a href="math.html#PROP_Float_tan">tan</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="utils.html">utils</a></small></td><td><small><a href="utils.html#PROP_Float_absolue">absolue</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Float</th><tr>
+</table>
+<a name="PROP_Float_to_precision"></a><h3>to_precision</h3><p><small>string::<a href="#CLASS_Float">Float</a>::</small><br/>fun <b>to_precision</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> `self' representation with `nb' digits after the '.'.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Int"></a><h2>Int</h2><small>string::</small><br/>redef class <a href="kernel.html">kernel</a>::<b>Int</b>
+<blockquote>
+<dl>
+<dt>Refine Int from: <dd><a href="kernel.html">kernel</a>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Discrete">Discrete</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Discrete">Discrete</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="math.html">math</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of Int</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Int</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_fill_buffer">fill_buffer</a></b>(<a href="#CLASS_Buffer">Buffer</a>, <a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Bool">Bool</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_to_base">to_base</a></b>(<a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Bool">Bool</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; return displayable int in base base and signed
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Int_to_hex">to_hex</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; return displayable int in hexadecimal (unsigned (not now))
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Object">Object</a>::</td><td><b><a href="#PROP_Int_to_s">to_s</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; return displayable int in base 10 and signed
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Int___percent">%</a>, <a href="kernel.html#PROP_Int___star">*</a>, <a href="kernel.html#PROP_Discrete___plus">+</a>, <a href="kernel.html#PROP_Discrete___minus">-</a>, <a href="kernel.html#PROP_Int___slash">/</a>, <a href="kernel.html#PROP_Comparable___l"><</a>, <a href="kernel.html#PROP_Comparable___leq"><=</a>, <a href="kernel.html#PROP_Comparable___leqg"><=></a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Comparable___g">></a>, <a href="kernel.html#PROP_Comparable___geq">>=</a>, <a href="kernel.html#PROP_Int_ascii">ascii</a>, <a href="kernel.html#PROP_Int_digit_count">digit_count</a>, <a href="kernel.html#PROP_Discrete_distance">distance</a>, <a href="kernel.html#PROP_Int_enumerate_before">enumerate_before</a>, <a href="kernel.html#PROP_Int_enumerate_to">enumerate_to</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Comparable_is_between">is_between</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Int_lshift">lshift</a>, <a href="kernel.html#PROP_Comparable_max">max</a>, <a href="kernel.html#PROP_Comparable_min">min</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Discrete_prec">prec</a>, <a href="kernel.html#PROP_Int_rshift">rshift</a>, <a href="kernel.html#PROP_Discrete_succ">succ</a>, <a href="kernel.html#PROP_Object_sys">sys</a>, <a href="kernel.html#PROP_Int_to_c">to_c</a>, <a href="kernel.html#PROP_Int_to_f">to_f</a>, <a href="kernel.html#PROP_Int_unary__minus">unary -</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Int_rand">rand</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Int</th><tr>
+</table>
+<a name="PROP_Int_fill_buffer"></a><h3>fill_buffer</h3><p><small>string::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>fill_buffer</b>(<a href="#CLASS_Buffer">Buffer</a>, <a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Bool">Bool</a>)</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Int_to_base"></a><h3>to_base</h3><p><small>string::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>to_base</b>(<a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Bool">Bool</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> return displayable int in base base and signed
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_to_hex"></a><h3>to_hex</h3><p><small>string::<a href="#CLASS_Int">Int</a>::</small><br/>fun <b>to_hex</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> return displayable int in hexadecimal (unsigned (not now))
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Int_to_s"></a><h3>to_s</h3><p><small>string::<a href="#CLASS_Int">Int</a>::</small><br/>redef fun <a href="#CLASS_Object">Object</a>:: <b>to_s</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> return displayable int in base 10 and signed
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Map"></a><h2>Map</h2><small>string::</small><br/>redef class <a href="collection.html">collection</a>::<b>Map</b>[K: <a href="#CLASS_Object">Object</a>V: nullable Object]
+<blockquote>
+<dl>
+<dt>Refine Map from: <dd><a href="collection.html">collection</a>
+<dt>Direct superclasses: <dd><a href="collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>
+<dt>All superclasses: <dd><a href="collection.html#CLASS_RemovableCollection">RemovableCollection</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="collection.html#CLASS_Sequence">Sequence</a>, <a href="collection.html#CLASS_CoupleMap">CoupleMap</a>, <a href="collection.html#CLASS_HashMap">HashMap</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Map</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Map_map_join">map_join</a></b>(<a href="#CLASS_String">String</a>, <a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Concatenate couple of 'key value' separate by 'couple_sep' and separate each couple with `sep'. 
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_join">join</a>, <a href="#PROP_Collection_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_Map___braeq">[]=</a>, <a href="collection.html#PROP_RemovableCollection_clear">clear</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_Map_recover_with">recover_with</a>, <a href="collection.html#PROP_RemovableCollection_remove">remove</a>, <a href="collection.html#PROP_RemovableCollection_remove_all">remove_all</a>, <a href="collection.html#PROP_Map_remove_at">remove_at</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Map</th><tr>
+</table>
+<a name="PROP_Map_map_join"></a><h3>map_join</h3><p><small>string::<a href="#CLASS_Map">Map</a>::</small><br/>fun <b>map_join</b>(<a href="#CLASS_String">String</a>, <a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Concatenate couple of 'key value' separate by 'couple_sep' and separate each couple with `sep'. 
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_NativeString"></a><h2>NativeString</h2><small>string::</small><br/>class <b>NativeString</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="exec.html">exec</a>
+</dl>
+<pre> Native strings are simple C char *
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of NativeString</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_NativeString_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of NativeString</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString___bra">[]</a></b>(<a href="#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Char">Char</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString___braeq">[]=</a></b>(<a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Char">Char</a>) is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString_atoi">atoi</a></b>: <a href="#CLASS_Int">Int</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString_copy_to">copy_to</a></b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>) is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_NativeString_cstring_length">cstring_length</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Position of the first nul character.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="exec.html">exec</a></small></td><td><small><a href="exec.html#PROP_NativeString_system">system</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of NativeString</th><tr>
+</table>
+<a name="PROP_NativeString_init"></a><h3>init</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of NativeString</th><tr>
+</table>
+<a name="PROP_NativeString___bra"></a><h3>[]</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>[]</b>(<a href="#CLASS_Int">Int</a>): <a href="kernel.html#CLASS_Char">Char</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeString___braeq"></a><h3>[]=</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>[]=</b>(<a href="#CLASS_Int">Int</a>, <a href="kernel.html#CLASS_Char">Char</a>) is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeString_atoi"></a><h3>atoi</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>atoi</b>: <a href="#CLASS_Int">Int</a> is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeString_copy_to"></a><h3>copy_to</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>copy_to</b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>, <a href="#CLASS_Int">Int</a>) is intern</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_NativeString_cstring_length"></a><h3>cstring_length</h3><p><small>string::<a href="#CLASS_NativeString">NativeString</a>::</small><br/>fun <b>cstring_length</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote><pre> Position of the first nul character.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Object"></a><h2>Object</h2><small>string::</small><br/>redef class <a href="kernel.html">kernel</a>::<b>Object</b>
+<blockquote>
+<dl>
+<dt>Refine Object from: <dd><a href="kernel.html">kernel</a>
+<dt>Previous refinements in: <dd><a href="hash.html">hash</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_StringCapable">StringCapable</a>, <a href="kernel.html#CLASS_Bool">Bool</a>, <a href="#CLASS_Float">Float</a>, <a href="collection.html#CLASS_ArrayCapable">ArrayCapable</a>, <a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_Sys">Sys</a>, <a href="kernel.html#CLASS_Pointer">Pointer</a>, <a href="collection.html#CLASS_Iterator">Iterator</a>, <a href="collection.html#CLASS_Couple">Couple</a>, <a href="collection.html#CLASS_NativeArray">NativeArray</a>, <a href="collection.html#CLASS_AbstractSorter">AbstractSorter</a>, <a href="collection.html#CLASS_HashNode">HashNode</a>
+<dt>Other direct subclasses in known modules: <dd><a href="symbol.html#CLASS_Symbol">Symbol</a>, <a href="string_search.html#CLASS_Pattern">Pattern</a>, <a href="string_search.html#CLASS_Match">Match</a>, <a href="stream.html#CLASS_IOS">IOS</a>, <a href="file.html#CLASS_NativeFileCapable">NativeFileCapable</a>, <a href="exec.html#CLASS_Process">Process</a>, <a href="figure.html#CLASS_Figure">Figure</a>, <a href="factory.html#CLASS_Fabrique">Fabrique</a>
+<dt>Refinements in known modules: <dd><a href="time.html">time</a>, <a href="file.html">file</a>, <a href="math.html">math</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Object</th></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_Object_args">args</a></b>: <a href="collection.html#CLASS_Sequence">Sequence</a>[<a href="#CLASS_String">String</a>]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object_inspect">inspect</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Developper readable representation of `self'.
+</td></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_Object_inspect_head">inspect_head</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return "<CLASSNAME:#OBJECTID".
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Object_to_s">to_s</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; User redeable representation of `self'.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="time.html">time</a></small></td><td><small><a href="time.html#PROP_Object_get_time">get_time</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="file.html">file</a></small></td><td><small><a href="file.html#PROP_Object_getc">getc</a>, <a href="file.html#PROP_Object_gets">gets</a>, <a href="file.html#PROP_Object_print">print</a>, <a href="file.html#PROP_Object_printn">printn</a>, <a href="file.html#PROP_Object_stderr">stderr</a>, <a href="file.html#PROP_Object_stdin">stdin</a>, <a href="file.html#PROP_Object_stdout">stdout</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="math.html">math</a></small></td><td><small><a href="math.html#PROP_Object_atan2">atan2</a>, <a href="math.html#PROP_Object_pi">pi</a>, <a href="math.html#PROP_Object_srand">srand</a>, <a href="math.html#PROP_Object_srand_from">srand_from</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Object</th><tr>
+</table>
+<a name="PROP_Object_args"></a><h3>args</h3><p><small>string::<a href="#CLASS_Object">Object</a>::</small><br/>protected fun <b>args</b>: <a href="collection.html#CLASS_Sequence">Sequence</a>[<a href="#CLASS_String">String</a>]</p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Object_inspect"></a><h3>inspect</h3><p><small>string::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>inspect</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Developper readable representation of `self'.
+ Usualy, it uses the form "<CLASSNAME:#OBJECTID bla bla bla>"
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_inspect_head"></a><h3>inspect_head</h3><p><small>string::<a href="#CLASS_Object">Object</a>::</small><br/>protected fun <b>inspect_head</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> Return "<CLASSNAME:#OBJECTID".
+ This fuction is mainly used with the redefinition of the inspect(0) method
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Object_to_s"></a><h3>to_s</h3><p><small>string::<a href="#CLASS_Object">Object</a>::</small><br/>fun <b>to_s</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> User redeable representation of `self'.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_String"></a><h2>String</h2><small>string::</small><br/>class <b>String</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_AbstractString">AbstractString</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Comparable">Comparable</a>, <a href="#CLASS_AbstractString">AbstractString</a>, <a href="collection.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>, <a href="collection.html#CLASS_SequenceRead">SequenceRead</a>, <a href="collection.html#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="symbol.html">symbol</a>, <a href="string_search.html">string_search</a>, <a href="file.html">file</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Virtual Types Summary of String</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Virtual Types</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Comparable_OTHER">OTHER</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of String</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_String_from_cstring">from_cstring</a></b>(<a href="#CLASS_NativeString">NativeString</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new string from a null terminated char *.
+</td></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_String_with_native">with_native</a></b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_Int">Int</a>)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new string from a given char *.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of String</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String___star">*</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; i repetitions of self
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String___plus">+</a></b>(<a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The concatenation of `self' with `r'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_String_to_cstring">to_cstring</a></b>: <a href="#CLASS_NativeString">NativeString</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return a null terminated char *
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractString">AbstractString</a></small></td><td><small><a href="#PROP_AbstractString_a_to">a_to</a>, <a href="#PROP_AbstractString_has_prefix">has_prefix</a>, <a href="#PROP_AbstractString_has_substring">has_substring</a>, <a href="#PROP_AbstractString_has_suffix">has_suffix</a>, <a href="#PROP_AbstractString_items">items</a>, <a href="#PROP_AbstractString_substring">substring</a>, <a href="#PROP_AbstractString_substring_from">substring_from</a>, <a href="#PROP_AbstractString_to_hex">to_hex</a>, <a href="#PROP_AbstractString_to_i">to_i</a>, <a href="#PROP_AbstractString_to_lower">to_lower</a>, <a href="#PROP_AbstractString_to_upper">to_upper</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_join">join</a>, <a href="#PROP_Collection_to_s">to_s</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead___eqeq">==</a>, <a href="collection.html#PROP_MapRead___bra">[]</a>, <a href="collection.html#PROP_AbstractArrayRead_copy_to">copy_to</a>, <a href="collection.html#PROP_Collection_count">count</a>, <a href="collection.html#PROP_Collection_first">first</a>, <a href="collection.html#PROP_SequenceRead_first">first</a>, <a href="collection.html#PROP_Collection_has">has</a>, <a href="collection.html#PROP_MapRead_has_key">has_key</a>, <a href="collection.html#PROP_Collection_has_only">has_only</a>, <a href="collection.html#PROP_SequenceRead_index_of">index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_index_of_from">index_of_from</a>, <a href="collection.html#PROP_Collection_is_empty">is_empty</a>, <a href="collection.html#PROP_Collection_iterate">iterate</a>, <a href="collection.html#PROP_Collection_iterator">iterator</a>, <a href="collection.html#PROP_SequenceRead_last">last</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of">last_index_of</a>, <a href="collection.html#PROP_AbstractArrayRead_last_index_of_from">last_index_of_from</a>, <a href="collection.html#PROP_Collection_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_length">length</a>, <a href="collection.html#PROP_AbstractArrayRead_reversed">reversed</a>, <a href="collection.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Comparable___l"><</a>, <a href="kernel.html#PROP_Comparable___leq"><=</a>, <a href="kernel.html#PROP_Comparable___leqg"><=></a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Comparable___g">></a>, <a href="kernel.html#PROP_Comparable___geq">>=</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Comparable_is_between">is_between</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Comparable_max">max</a>, <a href="kernel.html#PROP_Comparable_min">min</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="symbol.html">symbol</a></small></td><td><small><a href="symbol.html#PROP_String_to_symbol">to_symbol</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="string_search.html">string_search</a></small></td><td><small><a href="string_search.html#PROP_String_search">search</a>, <a href="string_search.html#PROP_String_search_all">search_all</a>, <a href="string_search.html#PROP_String_search_from">search_from</a>, <a href="string_search.html#PROP_String_split">split</a>, <a href="string_search.html#PROP_String_split_with">split_with</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="file.html">file</a></small></td><td><small><a href="file.html#PROP_String_basename">basename</a>, <a href="file.html#PROP_String_dirname">dirname</a>, <a href="file.html#PROP_String_file_delete">file_delete</a>, <a href="file.html#PROP_String_file_exists">file_exists</a>, <a href="file.html#PROP_String_file_path">file_path</a>, <a href="file.html#PROP_String_file_stat">file_stat</a>, <a href="file.html#PROP_String_mkdir">mkdir</a>, <a href="file.html#PROP_String_strip_extension">strip_extension</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of String</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_AbstractString">AbstractString</a></small></td><td><small><a href="#PROP_AbstractString__items">_items</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Attributes</small></th><tr>
+<tr><td width="20%"><small>from <a href="collection.html">collection</a></small></td><td><small><a href="collection.html#PROP_AbstractArrayRead__length">_length</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of String</th><tr>
+</table>
+<a name="PROP_String_from_cstring"></a><h3>from_cstring</h3><p><small>string::<a href="#CLASS_String">String</a>::</small><br/>init <b>from_cstring</b>(<a href="#CLASS_NativeString">NativeString</a>)</p>
+<blockquote><pre> Create a new string from a null terminated char *.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_with_native"></a><h3>with_native</h3><p><small>string::<a href="#CLASS_String">String</a>::</small><br/>init <b>with_native</b>(<a href="#CLASS_NativeString">NativeString</a>, <a href="#CLASS_Int">Int</a>)</p>
+<blockquote><pre> Create a new string from a given char *.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of String</th><tr>
+</table>
+<a name="PROP_String___star"></a><h3>*</h3><p><small>string::<a href="#CLASS_String">String</a>::</small><br/>fun <b>*</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> i repetitions of self
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String___plus"></a><h3>+</h3><p><small>string::<a href="#CLASS_String">String</a>::</small><br/>fun <b>+</b>(<a href="#CLASS_String">String</a>): <a href="#CLASS_String">String</a></p>
+<blockquote><pre> The concatenation of `self' with `r'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_String_to_cstring"></a><h3>to_cstring</h3><p><small>string::<a href="#CLASS_String">String</a>::</small><br/>fun <b>to_cstring</b>: <a href="#CLASS_NativeString">NativeString</a></p>
+<blockquote><pre> Return a null terminated char *
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_StringCapable"></a><h2>StringCapable</h2><small>string::</small><br/>class <b>StringCapable</b>
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Buffer">Buffer</a>
+</dl>
+<pre> StringCapable objects can create native strings
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of StringCapable</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_StringCapable_init">init</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of StringCapable</th></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_StringCapable_calloc_string">calloc_string</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_NativeString">NativeString</a> is intern<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of StringCapable</th><tr>
+</table>
+<a name="PROP_StringCapable_init"></a><h3>init</h3><p><small>string::<a href="#CLASS_StringCapable">StringCapable</a>::</small><br/>init <b>init</b></p>
+<blockquote></blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of StringCapable</th><tr>
+</table>
+<a name="PROP_StringCapable_calloc_string"></a><h3>calloc_string</h3><p><small>string::<a href="#CLASS_StringCapable">StringCapable</a>::</small><br/>protected fun <b>calloc_string</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_NativeString">NativeString</a> is intern</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Sys"></a><h2>Sys</h2><small>string::</small><br/>redef class <a href="kernel.html">kernel</a>::<b>Sys</b>
+<blockquote>
+<dl>
+<dt>Refine Sys from: <dd><a href="kernel.html">kernel</a>
+<dt>Direct superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="#CLASS_Object">Object</a>
+<dt>Refinements in known modules: <dd><a href="exec.html">exec</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Sys</th></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Sys_init_args">init_args</a></b><br/>&nbsp;&nbsp;&nbsp;&nbsp; Initialize `args' with the contents of `native_argc' and `native_argv'.
+</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Sys_native_argc">native_argc</a></b>: <a href="#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">private fun</td><td><b><a href="#PROP_Sys_native_argv">native_argv</a></b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_NativeString">NativeString</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sys_program_name">program_name</a></b>: <a href="#CLASS_String">String</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; The name of the program as given by the OS
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Object">Object</a></small></td><td><small><a href="#PROP_Object_args">args</a>, <a href="#PROP_Object_inspect">inspect</a>, <a href="#PROP_Object_inspect_head">inspect_head</a>, <a href="#PROP_Object_to_s">to_s</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="hash.html">hash</a></small></td><td><small><a href="hash.html#PROP_Object_hash">hash</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Sys_main">main</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="exec.html">exec</a></small></td><td><small><a href="exec.html#PROP_Sys_system">system</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Attributes Summary of Sys</th></tr>
+<tr><td width="20%" align="right">var</td><td><b><a href="#PROP_Sys__args_cache">_args_cache</a></b>: nullable Sequence[String]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Sys</th><tr>
+</table>
+<a name="PROP_Sys_init_args"></a><h3>init_args</h3><p><small>string::<a href="#CLASS_Sys">Sys</a>::</small><br/>private fun <b>init_args</b></p>
+<blockquote><pre> Initialize `args' with the contents of `native_argc' and `native_argv'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sys_native_argc"></a><h3>native_argc</h3><p><small>string::<a href="#CLASS_Sys">Sys</a>::</small><br/>private fun <b>native_argc</b>: <a href="#CLASS_Int">Int</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Sys_native_argv"></a><h3>native_argv</h3><p><small>string::<a href="#CLASS_Sys">Sys</a>::</small><br/>private fun <b>native_argv</b>(<a href="#CLASS_Int">Int</a>): <a href="#CLASS_NativeString">NativeString</a></p>
+<blockquote></blockquote>
+<hr/>
+<a name="PROP_Sys_program_name"></a><h3>program_name</h3><p><small>string::<a href="#CLASS_Sys">Sys</a>::</small><br/>fun <b>program_name</b>: <a href="#CLASS_String">String</a></p>
+<blockquote><pre> The name of the program as given by the OS
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Attributes Detail of Sys</th><tr>
+</table>
+<a name="PROP_Sys__args_cache"></a><h3>_args_cache</h3><p><small>string::<a href="#CLASS_Sys">Sys</a>::</small><br/>var <b>_args_cache</b>: nullable Sequence[String]</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+</body></html>

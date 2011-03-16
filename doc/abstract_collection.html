@@ -1,0 +1,832 @@
+<html><head><title>Module abstract_collection</title></head>
+<body>
+<table border="0" width="100%" cellpadding="1" cellspacing="0"><tr><td bgcolor="#eeeeff">
+<a href="overview.html"><b>Overview</b></a>&nbsp; <a href="index-1.html"><b>Index</b></a>&nbsp; <a href="index.html" target="_top"><b>With Frames</b></a>
+</td></tr></table>Visibility: <b>Public</b>&nbsp; <strike><b>Inside</b></strike>&nbsp; <a href="abstract_collection__.html"><b>Intrude</b></a>&nbsp; <br/><h1>Module abstract_collection</h1>
+<dl><a href="standard.html">standard</a>::<a href="collection.html">collection</a>::<br/>module <b>abstract_collection</b><br/>
+<dt>Imported modules: <dd><a href="kernel.html">kernel</a>
+</dl>
+<pre> This module define several abtract collection classes.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2"><big>Class Summary of abstract_collection</big></th><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Collection">Collection</a></b>[E: nullable Object]<br/> The root of the collection hierarchy.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Container">Container</a></b>[E: nullable Object]<br/> A collection that contains only one item.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_ContainerIterator">ContainerIterator</a></b>[E: nullable Object]<br/> This iterator is quite stupid since it is used for only one item.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Couple">Couple</a></b>[F: nullable ObjectS: nullable Object]<br/> Two objects in a simple structure.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_CoupleMap">CoupleMap</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/> Associatives arrays that internally uses couples to represent each (key, value) pairs.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_CoupleMapIterator">CoupleMapIterator</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/> Iterator on CoupleMap
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_IndexedIterator">IndexedIterator</a></b>[E: nullable Object]<br/> Iterators on indexed collections.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Iterator">Iterator</a></b>[E: nullable Object]<br/> Instances of the Iterator class generates a series of elements, one at a time.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Map">Map</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/> Maps are associative collections: `key' -> `item'.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_MapIterator">MapIterator</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/> Iterators for Map.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_MapRead">MapRead</a></b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]<br/>&nbsp;</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_NaiveCollection">NaiveCollection</a></b>[E: nullable Object]<br/> Naive implementation of collections method
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_RemovableCollection">RemovableCollection</a></b>[E: nullable Object]<br/> Items can be removed from this collection
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Sequence">Sequence</a></b>[E: nullable Object]<br/> Indexed collection are ordoned collections.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_SequenceRead">SequenceRead</a></b>[E: nullable Object]<br/> Indexed collection are ordoned collections.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_Set">Set</a></b>[E: <a href="kernel.html#CLASS_Object">Object</a>]<br/> Abstract sets.
+</td><tr>
+<tr><td width="20%" align="right">class </td><td><b><a href="#CLASS_SimpleCollection">SimpleCollection</a></b>[E: nullable Object]<br/> Items can be added to these collections.
+</td><tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th><big>Class Detail of abstract_collection</big></th><tr>
+</table>
+<a name="CLASS_Collection"></a><h2>Collection</h2><small>abstract_collection::</small><br/>class <b>Collection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_NaiveCollection">NaiveCollection</a>, <a href="#CLASS_Container">Container</a>, <a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_MapRead">MapRead</a>
+<dt>Other direct subclasses in known modules: <dd><a href="range.html#CLASS_Range">Range</a>, <a href="hash_collection.html#CLASS_HashCollection">HashCollection</a>
+<dt>Refinements in known modules: <dd><a href="array.html">array</a>, <a href="string.html">string</a>
+</dl>
+<pre> The root of the collection hierarchy.
+
+ Instances of this class offers an iterator method.
+
+ Colections instances can use the "for" structure:
+	  var x: Collection[U]
+         ...
+         for u in x do
+             # u is a U
+             ...
+         end
+ that is equivalent with
+         var x: Collection[U]
+         ...
+         var i = x.iterator
+         while i.is_ok do
+             var u = i.item # u is a U
+             ...
+             i.next
+         end
+
+ This abstract class implements its others methods with an iterator.
+ Subclasses may redefine them with an efficient implementation.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Collection</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_count">count</a></b>(E): <a href="kernel.html#CLASS_Int">Int</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; How many occurences of `item' are in the collection ?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_first">first</a></b>: E is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Return one the item of the collection
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_has">has</a></b>(E): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is `item' in the collection ?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_has_only">has_only</a></b>(E): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is the collection contain only `item' ?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_is_empty">is_empty</a></b>: <a href="kernel.html#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is there no item in the collection ?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_iterate">iterate</a></b> !each(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Iterate over each element of the collection
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_iterator">iterator</a></b>: <a href="#CLASS_Iterator">Iterator</a>[E] is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Get a new iterator on the collection.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Collection_length">length</a></b>: <a href="kernel.html#CLASS_Int">Int</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Number of items in the collection.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_Collection_to_a">to_a</a></small></td><tr>
+<tr><td width="20%"><small>in <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Collection_join">join</a>, <a href="standard.html#PROP_Collection_to_s">to_s</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Collection</th><tr>
+</table>
+<a name="PROP_Collection_count"></a><h3>count</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>count</b>(E): <a href="kernel.html#CLASS_Int">Int</a> is abstract</p>
+<blockquote><pre> How many occurences of `item' are in the collection ?
+ Comparaisons are done with ==
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_first"></a><h3>first</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>first</b>: E is abstract</p>
+<blockquote><pre> Return one the item of the collection
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_has"></a><h3>has</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>has</b>(E): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is `item' in the collection ?
+ Comparaisons are done with ==
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_has_only"></a><h3>has_only</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>has_only</b>(E): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is the collection contain only `item' ?
+ Comparaisons are done with ==
+ Return true if the collection is empty.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_is_empty"></a><h3>is_empty</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>is_empty</b>: <a href="kernel.html#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is there no item in the collection ?
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_iterate"></a><h3>iterate</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>iterate</b> !each(E)</p>
+<blockquote><pre> Iterate over each element of the collection
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_iterator"></a><h3>iterator</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>iterator</b>: <a href="#CLASS_Iterator">Iterator</a>[E] is abstract</p>
+<blockquote><pre> Get a new iterator on the collection.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Collection_length"></a><h3>length</h3><p><small>abstract_collection::<a href="#CLASS_Collection">Collection</a>::</small><br/>fun <b>length</b>: <a href="kernel.html#CLASS_Int">Int</a> is abstract</p>
+<blockquote><pre> Number of items in the collection.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Container"></a><h2>Container</h2><small>abstract_collection::</small><br/>class <b>Container</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Collection">Collection</a>
+<dt>All superclasses: <dd><a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="list.html#CLASS_ListNode">ListNode</a>
+</dl>
+<pre> A collection that contains only one item.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Container</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Container_init">init</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new instance with a given initial value.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Container</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Container_item">item</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; The stored item
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Container_item__eq">item=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; The stored item
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Container</th><tr>
+</table>
+<a name="PROP_Container_init"></a><h3>init</h3><p><small>abstract_collection::<a href="#CLASS_Container">Container</a>::</small><br/>init <b>init</b>(E)</p>
+<blockquote><pre> Create a new instance with a given initial value.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Container</th><tr>
+</table>
+<a name="PROP_Container_item"></a><h3>item</h3><p><small>abstract_collection::<a href="#CLASS_Container">Container</a>::</small><br/>fun <b>item</b>: E</p>
+<blockquote><pre> The stored item
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Container_item__eq"></a><h3>item=</h3><p><small>abstract_collection::<a href="#CLASS_Container">Container</a>::</small><br/>fun <b>item=</b>(E)</p>
+<blockquote><pre> The stored item
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_ContainerIterator"></a><h2>ContainerIterator</h2><small>abstract_collection::</small><br/>class <b>ContainerIterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>
+<dt>All superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> This iterator is quite stupid since it is used for only one item.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of ContainerIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_ContainerIterator_init">init</a></b>(<a href="#CLASS_Container">Container</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of ContainerIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_is_ok">is_ok</a>, <a href="#PROP_Iterator_item">item</a>, <a href="#PROP_Iterator_next">next</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of ContainerIterator</th><tr>
+</table>
+<a name="PROP_ContainerIterator_init"></a><h3>init</h3><p><small>abstract_collection::<a href="#CLASS_ContainerIterator">ContainerIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_Container">Container</a>[E])</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_Couple"></a><h2>Couple</h2><small>abstract_collection::</small><br/>class <b>Couple</b>[F: nullable ObjectS: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Two objects in a simple structure.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of Couple</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_Couple_init">init</a></b>(F, S)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Create a new instance with a first and a second object.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Couple</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Couple_first">first</a></b>: F<br/>&nbsp;&nbsp;&nbsp;&nbsp; The first element of the couple.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Couple_first__eq">first=</a></b>(F)<br/>&nbsp;&nbsp;&nbsp;&nbsp; The first element of the couple.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Couple_second">second</a></b>: S<br/>&nbsp;&nbsp;&nbsp;&nbsp; The second element of the couple.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Couple_second__eq">second=</a></b>(S)<br/>&nbsp;&nbsp;&nbsp;&nbsp; The second element of the couple.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of Couple</th><tr>
+</table>
+<a name="PROP_Couple_init"></a><h3>init</h3><p><small>abstract_collection::<a href="#CLASS_Couple">Couple</a>::</small><br/>init <b>init</b>(F, S)</p>
+<blockquote><pre> Create a new instance with a first and a second object.
+</pre>
+</blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Couple</th><tr>
+</table>
+<a name="PROP_Couple_first"></a><h3>first</h3><p><small>abstract_collection::<a href="#CLASS_Couple">Couple</a>::</small><br/>fun <b>first</b>: F</p>
+<blockquote><pre> The first element of the couple.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Couple_first__eq"></a><h3>first=</h3><p><small>abstract_collection::<a href="#CLASS_Couple">Couple</a>::</small><br/>fun <b>first=</b>(F)</p>
+<blockquote><pre> The first element of the couple.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Couple_second"></a><h3>second</h3><p><small>abstract_collection::<a href="#CLASS_Couple">Couple</a>::</small><br/>fun <b>second</b>: S</p>
+<blockquote><pre> The second element of the couple.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Couple_second__eq"></a><h3>second=</h3><p><small>abstract_collection::<a href="#CLASS_Couple">Couple</a>::</small><br/>fun <b>second=</b>(S)</p>
+<blockquote><pre> The second element of the couple.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_CoupleMap"></a><h2>CoupleMap</h2><small>abstract_collection::</small><br/>class <b>CoupleMap</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Map">Map</a>
+<dt>All superclasses: <dd><a href="#CLASS_Map">Map</a>, <a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="array.html#CLASS_ArrayMap">ArrayMap</a>
+</dl>
+<pre> Associatives arrays that internally uses couples to represent each (key, value) pairs.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of CoupleMap</th></tr>
+<tr><td width="20%" align="right">protected fun</td><td><b><a href="#PROP_CoupleMap_couple_at">couple_at</a></b>(K): nullable Couple[K, E] is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the couple of the corresponding key
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Map">Map</a></small></td><td><small><a href="#PROP_Map___braeq">[]=</a>, <a href="#PROP_Map_recover_with">recover_with</a>, <a href="#PROP_Map_remove_at">remove_at</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_RemovableCollection">RemovableCollection</a></small></td><td><small><a href="#PROP_RemovableCollection_clear">clear</a>, <a href="#PROP_RemovableCollection_remove">remove</a>, <a href="#PROP_RemovableCollection_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapRead">MapRead</a></small></td><td><small><a href="#PROP_MapRead___bra">[]</a>, <a href="#PROP_MapRead_has_key">has_key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of CoupleMap</th><tr>
+</table>
+<a name="PROP_CoupleMap_couple_at"></a><h3>couple_at</h3><p><small>abstract_collection::<a href="#CLASS_CoupleMap">CoupleMap</a>::</small><br/>protected fun <b>couple_at</b>(K): nullable Couple[K, E] is abstract</p>
+<blockquote><pre> Return the couple of the corresponding key
+ Return null if the key is no associated element
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_CoupleMapIterator"></a><h2>CoupleMapIterator</h2><small>abstract_collection::</small><br/>class <b>CoupleMapIterator</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_MapIterator">MapIterator</a>
+<dt>All superclasses: <dd><a href="#CLASS_MapIterator">MapIterator</a>, <a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Iterator on CoupleMap
+
+ Actually is is a wrapper around an iterator of the internal array of the map.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Consructors Summary of CoupleMapIterator</th></tr>
+<tr><td width="20%" align="right">init</td><td><b><a href="#PROP_CoupleMapIterator_init">init</a></b>(<a href="#CLASS_Iterator">Iterator</a>[<a href="#CLASS_Couple">Couple</a>[K, E]])<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of CoupleMapIterator</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapIterator">MapIterator</a></small></td><td><small><a href="#PROP_MapIterator_key">key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_is_ok">is_ok</a>, <a href="#PROP_Iterator_item">item</a>, <a href="#PROP_Iterator_next">next</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Consructors Detail of CoupleMapIterator</th><tr>
+</table>
+<a name="PROP_CoupleMapIterator_init"></a><h3>init</h3><p><small>abstract_collection::<a href="#CLASS_CoupleMapIterator">CoupleMapIterator</a>::</small><br/>init <b>init</b>(<a href="#CLASS_Iterator">Iterator</a>[<a href="#CLASS_Couple">Couple</a>[K, E]])</p>
+<blockquote></blockquote>
+</blockquote><hr/>
+<a name="CLASS_IndexedIterator"></a><h2>IndexedIterator</h2><small>abstract_collection::</small><br/>class <b>IndexedIterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_MapIterator">MapIterator</a>
+<dt>All superclasses: <dd><a href="#CLASS_MapIterator">MapIterator</a>, <a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="list.html#CLASS_ListIterator">ListIterator</a>, <a href="array.html#CLASS_ArrayIterator">ArrayIterator</a>
+</dl>
+<pre> Iterators on indexed collections.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of IndexedIterator</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_IndexedIterator_index">index</a></b>: <a href="kernel.html#CLASS_Int">Int</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; The index of the current item.
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_MapIterator">MapIterator</a>::</td><td><b><a href="#PROP_IndexedIterator_key">key</a></b>: <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; A synonym of index.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapIterator">MapIterator</a></small></td><td><small><a href="#PROP_MapIterator_key">key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_is_ok">is_ok</a>, <a href="#PROP_Iterator_item">item</a>, <a href="#PROP_Iterator_next">next</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of IndexedIterator</th><tr>
+</table>
+<a name="PROP_IndexedIterator_index"></a><h3>index</h3><p><small>abstract_collection::<a href="#CLASS_IndexedIterator">IndexedIterator</a>::</small><br/>fun <b>index</b>: <a href="kernel.html#CLASS_Int">Int</a> is abstract</p>
+<blockquote><pre> The index of the current item.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_IndexedIterator_key"></a><h3>key</h3><p><small>abstract_collection::<a href="#CLASS_IndexedIterator">IndexedIterator</a>::</small><br/>redef fun <a href="#CLASS_MapIterator">MapIterator</a>:: <b>key</b>: <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> A synonym of index.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Iterator"></a><h2>Iterator</h2><small>abstract_collection::</small><br/>class <b>Iterator</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>All superclasses: <dd><a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_ContainerIterator">ContainerIterator</a>, <a href="#CLASS_MapIterator">MapIterator</a>
+<dt>Other direct subclasses in known modules: <dd><a href="range.html#CLASS_IteratorRange">IteratorRange</a>, <a href="array.html#CLASS_ArraySetIterator">ArraySetIterator</a>, <a href="hash_collection.html#CLASS_HashSetIterator">HashSetIterator</a>
+<dt>Refinements in known modules: <dd><a href="array.html">array</a>
+</dl>
+<pre> Instances of the Iterator class generates a series of elements, one at a time.
+ They are mainly used with collections.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Iterator</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Iterator_is_ok">is_ok</a></b>: <a href="kernel.html#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is there a current item ?
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Iterator_item">item</a></b>: E is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; The current item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Iterator_next">next</a></b> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Jump to the next item.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="array.html">array</a></small></td><td><small><a href="array.html#PROP_Iterator_to_a">to_a</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Iterator</th><tr>
+</table>
+<a name="PROP_Iterator_is_ok"></a><h3>is_ok</h3><p><small>abstract_collection::<a href="#CLASS_Iterator">Iterator</a>::</small><br/>fun <b>is_ok</b>: <a href="kernel.html#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is there a current item ?
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Iterator_item"></a><h3>item</h3><p><small>abstract_collection::<a href="#CLASS_Iterator">Iterator</a>::</small><br/>fun <b>item</b>: E is abstract</p>
+<blockquote><pre> The current item.
+ Require `is_ok'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Iterator_next"></a><h3>next</h3><p><small>abstract_collection::<a href="#CLASS_Iterator">Iterator</a>::</small><br/>fun <b>next</b> is abstract</p>
+<blockquote><pre> Jump to the next item.
+ Require `is_ok'.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Map"></a><h2>Map</h2><small>abstract_collection::</small><br/>class <b>Map</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_MapRead">MapRead</a>
+<dt>All superclasses: <dd><a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Sequence">Sequence</a>, <a href="#CLASS_CoupleMap">CoupleMap</a>
+<dt>Other direct subclasses in known modules: <dd><a href="hash_collection.html#CLASS_HashMap">HashMap</a>
+<dt>Refinements in known modules: <dd><a href="string.html">string</a>
+</dl>
+<pre> Maps are associative collections: `key' -> `item'.
+
+ The main operator over maps is [].
+
+     var map: Map[U, V]
+     ...
+     map[u1] = v1      # Associate 'v1' to 'u1'
+     map[u2] = v2      # Associate 'v2' to 'u2'
+     map[u1]            # -> v1
+     map[u2]            # -> v2
+     map.has_key(u1)    # -> true
+     map.has_key(u3)    # -> false
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Map</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Map___braeq">[]=</a></b>(K, E) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Set the`item' at `key'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Map_recover_with">recover_with</a></b>(<a href="#CLASS_Map">Map</a>[K, E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add each (key,value) of `map' into `self'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Map_remove_at">remove_at</a></b>(K) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove the item at `key'
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_RemovableCollection">RemovableCollection</a></small></td><td><small><a href="#PROP_RemovableCollection_clear">clear</a>, <a href="#PROP_RemovableCollection_remove">remove</a>, <a href="#PROP_RemovableCollection_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapRead">MapRead</a></small></td><td><small><a href="#PROP_MapRead___bra">[]</a>, <a href="#PROP_MapRead_has_key">has_key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Added Methods in known modules</small></th><tr>
+<tr><td width="20%"><small>in <a href="standard.html">standard</a></small></td><td><small><a href="standard.html#PROP_Map_map_join">map_join</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Map</th><tr>
+</table>
+<a name="PROP_Map___braeq"></a><h3>[]=</h3><p><small>abstract_collection::<a href="#CLASS_Map">Map</a>::</small><br/>fun <b>[]=</b>(K, E) is abstract</p>
+<blockquote><pre> Set the`item' at `key'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Map_recover_with"></a><h3>recover_with</h3><p><small>abstract_collection::<a href="#CLASS_Map">Map</a>::</small><br/>fun <b>recover_with</b>(<a href="#CLASS_Map">Map</a>[K, E])</p>
+<blockquote><pre> Add each (key,value) of `map' into `self'.
+ If a same key exists in `map' and `self', then the value in self is discarded.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Map_remove_at"></a><h3>remove_at</h3><p><small>abstract_collection::<a href="#CLASS_Map">Map</a>::</small><br/>fun <b>remove_at</b>(K) is abstract</p>
+<blockquote><pre> Remove the item at `key'
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_MapIterator"></a><h2>MapIterator</h2><small>abstract_collection::</small><br/>class <b>MapIterator</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>
+<dt>All superclasses: <dd><a href="#CLASS_Iterator">Iterator</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_IndexedIterator">IndexedIterator</a>, <a href="#CLASS_CoupleMapIterator">CoupleMapIterator</a>
+<dt>Other direct subclasses in known modules: <dd><a href="hash_collection.html#CLASS_HashMapIterator">HashMapIterator</a>
+</dl>
+<pre> Iterators for Map.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of MapIterator</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_MapIterator_key">key</a></b>: K is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; The key of the current item.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Iterator">Iterator</a></small></td><td><small><a href="#PROP_Iterator_is_ok">is_ok</a>, <a href="#PROP_Iterator_item">item</a>, <a href="#PROP_Iterator_next">next</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of MapIterator</th><tr>
+</table>
+<a name="PROP_MapIterator_key"></a><h3>key</h3><p><small>abstract_collection::<a href="#CLASS_MapIterator">MapIterator</a>::</small><br/>fun <b>key</b>: K is abstract</p>
+<blockquote><pre> The key of the current item.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_MapRead"></a><h2>MapRead</h2><small>abstract_collection::</small><br/>class <b>MapRead</b>[K: <a href="kernel.html#CLASS_Object">Object</a>E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Collection">Collection</a>
+<dt>All superclasses: <dd><a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Map">Map</a>, <a href="#CLASS_SequenceRead">SequenceRead</a>
+</dl>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of MapRead</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_MapRead___bra">[]</a></b>(K): E is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Get the item at `key'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_MapRead_has_key">has_key</a></b>(K): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Is there an item at `key'.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of MapRead</th><tr>
+</table>
+<a name="PROP_MapRead___bra"></a><h3>[]</h3><p><small>abstract_collection::<a href="#CLASS_MapRead">MapRead</a>::</small><br/>fun <b>[]</b>(K): E is abstract</p>
+<blockquote><pre> Get the item at `key'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_MapRead_has_key"></a><h3>has_key</h3><p><small>abstract_collection::<a href="#CLASS_MapRead">MapRead</a>::</small><br/>fun <b>has_key</b>(K): <a href="kernel.html#CLASS_Bool">Bool</a> is abstract</p>
+<blockquote><pre> Is there an item at `key'.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_NaiveCollection"></a><h2>NaiveCollection</h2><small>abstract_collection::</small><br/>class <b>NaiveCollection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Collection">Collection</a>
+<dt>All superclasses: <dd><a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+</dl>
+<pre> Naive implementation of collections method
+ You only have to define iterator!
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of NaiveCollection</th></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+</blockquote><hr/>
+<a name="CLASS_RemovableCollection"></a><h2>RemovableCollection</h2><small>abstract_collection::</small><br/>class <b>RemovableCollection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_Collection">Collection</a>
+<dt>All superclasses: <dd><a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_SimpleCollection">SimpleCollection</a>, <a href="#CLASS_Map">Map</a>
+</dl>
+<pre> Items can be removed from this collection
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of RemovableCollection</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_RemovableCollection_clear">clear</a></b> is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove all items
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_RemovableCollection_remove">remove</a></b>(E) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove an occucence of `item'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_RemovableCollection_remove_all">remove_all</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove all occurences of `item'
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of RemovableCollection</th><tr>
+</table>
+<a name="PROP_RemovableCollection_clear"></a><h3>clear</h3><p><small>abstract_collection::<a href="#CLASS_RemovableCollection">RemovableCollection</a>::</small><br/>fun <b>clear</b> is abstract</p>
+<blockquote><pre> Remove all items
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_RemovableCollection_remove"></a><h3>remove</h3><p><small>abstract_collection::<a href="#CLASS_RemovableCollection">RemovableCollection</a>::</small><br/>fun <b>remove</b>(E) is abstract</p>
+<blockquote><pre> Remove an occucence of `item'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_RemovableCollection_remove_all"></a><h3>remove_all</h3><p><small>abstract_collection::<a href="#CLASS_RemovableCollection">RemovableCollection</a>::</small><br/>fun <b>remove_all</b>(E)</p>
+<blockquote><pre> Remove all occurences of `item'
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Sequence"></a><h2>Sequence</h2><small>abstract_collection::</small><br/>class <b>Sequence</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_SequenceRead">SequenceRead</a>, <a href="#CLASS_Map">Map</a>, <a href="#CLASS_SimpleCollection">SimpleCollection</a>
+<dt>All superclasses: <dd><a href="#CLASS_SequenceRead">SequenceRead</a>, <a href="#CLASS_Map">Map</a>, <a href="#CLASS_MapRead">MapRead</a>, <a href="#CLASS_SimpleCollection">SimpleCollection</a>, <a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="list.html#CLASS_List">List</a>, <a href="array.html#CLASS_AbstractArray">AbstractArray</a>
+</dl>
+<pre> Indexed collection are ordoned collections.
+ The first item is 0. The last is `length'-1.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Sequence</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_SimpleCollection">SimpleCollection</a>::</td><td><b><a href="#PROP_Sequence_add">add</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; A synonym of `push'
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_append">append</a></b>(<a href="#CLASS_Collection">Collection</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add each item of `coll` after the last.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_first__eq">first=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Set the first item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_last__eq">last=</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Set the last item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_pop">pop</a></b>: E is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove the last item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_push">push</a></b>(E) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add an item after the last.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_shift">shift</a></b>: E is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Remove the first item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_Sequence_unshift">unshift</a></b>(E) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add an item before the last.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_SequenceRead">SequenceRead</a></small></td><td><small><a href="#PROP_SequenceRead_first">first</a>, <a href="#PROP_SequenceRead_index_of">index_of</a>, <a href="#PROP_SequenceRead_last">last</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Map">Map</a></small></td><td><small><a href="#PROP_Map___braeq">[]=</a>, <a href="#PROP_Map_recover_with">recover_with</a>, <a href="#PROP_Map_remove_at">remove_at</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapRead">MapRead</a></small></td><td><small><a href="#PROP_MapRead___bra">[]</a>, <a href="#PROP_MapRead_has_key">has_key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_SimpleCollection">SimpleCollection</a></small></td><td><small><a href="#PROP_SimpleCollection_add">add</a>, <a href="#PROP_SimpleCollection_add_all">add_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_RemovableCollection">RemovableCollection</a></small></td><td><small><a href="#PROP_RemovableCollection_clear">clear</a>, <a href="#PROP_RemovableCollection_remove">remove</a>, <a href="#PROP_RemovableCollection_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Sequence</th><tr>
+</table>
+<a name="PROP_Sequence_add"></a><h3>add</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>redef fun <a href="#CLASS_SimpleCollection">SimpleCollection</a>:: <b>add</b>(E)</p>
+<blockquote><pre> A synonym of `push'
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_append"></a><h3>append</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>append</b>(<a href="#CLASS_Collection">Collection</a>[E])</p>
+<blockquote><pre> Add each item of `coll` after the last.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_first__eq"></a><h3>first=</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>first=</b>(E)</p>
+<blockquote><pre> Set the first item.
+ Is equivalent with `self'[0] = `item'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_last__eq"></a><h3>last=</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>last=</b>(E)</p>
+<blockquote><pre> Set the last item.
+ Is equivalent with `self'[length-1] = `item'.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_pop"></a><h3>pop</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>pop</b>: E is abstract</p>
+<blockquote><pre> Remove the last item.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_push"></a><h3>push</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>push</b>(E) is abstract</p>
+<blockquote><pre> Add an item after the last.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_shift"></a><h3>shift</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>shift</b>: E is abstract</p>
+<blockquote><pre> Remove the first item.
+ The second item become the first.
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Sequence_unshift"></a><h3>unshift</h3><p><small>abstract_collection::<a href="#CLASS_Sequence">Sequence</a>::</small><br/>fun <b>unshift</b>(E) is abstract</p>
+<blockquote><pre> Add an item before the last.
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_SequenceRead"></a><h2>SequenceRead</h2><small>abstract_collection::</small><br/>class <b>SequenceRead</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_MapRead">MapRead</a>
+<dt>All superclasses: <dd><a href="#CLASS_MapRead">MapRead</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Sequence">Sequence</a>
+<dt>Other direct subclasses in known modules: <dd><a href="array.html#CLASS_AbstractArrayRead">AbstractArrayRead</a>
+</dl>
+<pre> Indexed collection are ordoned collections.
+ The first item is 0. The last is `length'-1.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of SequenceRead</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_SequenceRead_first">first</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; Get the first item.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_SequenceRead_index_of">index_of</a></b>(E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Return the index of the first occurence of `item'.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_SequenceRead_last">last</a></b>: E<br/>&nbsp;&nbsp;&nbsp;&nbsp; Get the last item.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_MapRead">MapRead</a></small></td><td><small><a href="#PROP_MapRead___bra">[]</a>, <a href="#PROP_MapRead_has_key">has_key</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of SequenceRead</th><tr>
+</table>
+<a name="PROP_SequenceRead_first"></a><h3>first</h3><p><small>abstract_collection::<a href="#CLASS_SequenceRead">SequenceRead</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>first</b>: E</p>
+<blockquote><pre> Get the first item.
+ Is equivalent with `self'[0].
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_SequenceRead_index_of"></a><h3>index_of</h3><p><small>abstract_collection::<a href="#CLASS_SequenceRead">SequenceRead</a>::</small><br/>fun <b>index_of</b>(E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Return the index of the first occurence of `item'.
+ Return -1 if `item' is not found
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_SequenceRead_last"></a><h3>last</h3><p><small>abstract_collection::<a href="#CLASS_SequenceRead">SequenceRead</a>::</small><br/>fun <b>last</b>: E</p>
+<blockquote><pre> Get the last item.
+ Is equivalent with `self'[`length'-1].
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_Set"></a><h2>Set</h2><small>abstract_collection::</small><br/>class <b>Set</b>[E: <a href="kernel.html#CLASS_Object">Object</a>]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_SimpleCollection">SimpleCollection</a>
+<dt>All superclasses: <dd><a href="#CLASS_SimpleCollection">SimpleCollection</a>, <a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Other direct subclasses in known modules: <dd><a href="array.html#CLASS_ArraySet">ArraySet</a>, <a href="hash_collection.html#CLASS_HashSet">HashSet</a>
+</dl>
+<pre> Abstract sets.
+
+ Set contains contains only one element with the same value (according to =).
+    var s : Set[E]
+    var a = "Hello"
+    var b = "Hello"
+    ...
+    s.add(a)
+    s.has(b) # --> true
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of Set</th></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_Collection">Collection</a>::</td><td><b><a href="#PROP_Set_count">count</a></b>(E): <a href="kernel.html#CLASS_Int">Int</a><br/>&nbsp;&nbsp;&nbsp;&nbsp; Only 0 or 1
+</td></tr>
+<tr><td width="20%" align="right">redef fun <a href="#CLASS_RemovableCollection">RemovableCollection</a>::</td><td><b><a href="#PROP_Set_remove_all">remove_all</a></b>(E)<br/>&nbsp;&nbsp;&nbsp;&nbsp; Synonym of remove since there is only one item
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_SimpleCollection">SimpleCollection</a></small></td><td><small><a href="#PROP_SimpleCollection_add">add</a>, <a href="#PROP_SimpleCollection_add_all">add_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_RemovableCollection">RemovableCollection</a></small></td><td><small><a href="#PROP_RemovableCollection_clear">clear</a>, <a href="#PROP_RemovableCollection_remove">remove</a>, <a href="#PROP_RemovableCollection_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of Set</th><tr>
+</table>
+<a name="PROP_Set_count"></a><h3>count</h3><p><small>abstract_collection::<a href="#CLASS_Set">Set</a>::</small><br/>redef fun <a href="#CLASS_Collection">Collection</a>:: <b>count</b>(E): <a href="kernel.html#CLASS_Int">Int</a></p>
+<blockquote><pre> Only 0 or 1
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_Set_remove_all"></a><h3>remove_all</h3><p><small>abstract_collection::<a href="#CLASS_Set">Set</a>::</small><br/>redef fun <a href="#CLASS_RemovableCollection">RemovableCollection</a>:: <b>remove_all</b>(E)</p>
+<blockquote><pre> Synonym of remove since there is only one item
+</pre>
+</blockquote>
+</blockquote><hr/>
+<a name="CLASS_SimpleCollection"></a><h2>SimpleCollection</h2><small>abstract_collection::</small><br/>class <b>SimpleCollection</b>[E: nullable Object]
+<blockquote>
+<dl>
+<dt>Direct superclasses: <dd><a href="#CLASS_RemovableCollection">RemovableCollection</a>
+<dt>All superclasses: <dd><a href="#CLASS_RemovableCollection">RemovableCollection</a>, <a href="#CLASS_Collection">Collection</a>, <a href="kernel.html#CLASS_Object">Object</a>
+<dt>Direct subclasses: <dd><a href="#CLASS_Set">Set</a>, <a href="#CLASS_Sequence">Sequence</a>
+</dl>
+<pre> Items can be added to these collections.
+</pre>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th colspan="2">Methods Summary of SimpleCollection</th></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_SimpleCollection_add">add</a></b>(E) is abstract<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add an item in a collection.
+</td></tr>
+<tr><td width="20%" align="right">fun</td><td><b><a href="#PROP_SimpleCollection_add_all">add_all</a></b>(<a href="#CLASS_Collection">Collection</a>[E])<br/>&nbsp;&nbsp;&nbsp;&nbsp; Add each item of `coll`.
+</td></tr>
+</table><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Inherited Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_RemovableCollection">RemovableCollection</a></small></td><td><small><a href="#PROP_RemovableCollection_clear">clear</a>, <a href="#PROP_RemovableCollection_remove">remove</a>, <a href="#PROP_RemovableCollection_remove_all">remove_all</a></small></td><tr>
+<tr><td width="20%"><small>from <a href="#CLASS_Collection">Collection</a></small></td><td><small><a href="#PROP_Collection_count">count</a>, <a href="#PROP_Collection_first">first</a>, <a href="#PROP_Collection_has">has</a>, <a href="#PROP_Collection_has_only">has_only</a>, <a href="#PROP_Collection_is_empty">is_empty</a>, <a href="#PROP_Collection_iterate">iterate</a>, <a href="#PROP_Collection_iterator">iterator</a>, <a href="#PROP_Collection_length">length</a></small></td><tr>
+<tr bgcolor="#EEEEFF"><th colspan="2"><small>Imported Methods</small></th><tr>
+<tr><td width="20%"><small>from <a href="kernel.html">kernel</a></small></td><td><small><a href="kernel.html#PROP_Object___neq">!=</a>, <a href="kernel.html#PROP_Object___eqeq">==</a>, <a href="kernel.html#PROP_Object_exit">exit</a>, <a href="kernel.html#PROP_Object_is_same_type">is_same_type</a>, <a href="kernel.html#PROP_Object_object_id">object_id</a>, <a href="kernel.html#PROP_Object_output">output</a>, <a href="kernel.html#PROP_Object_sys">sys</a></small></td><tr>
+</table><br/><br/>
+<table border="1" width="100%" cellpadding="3" cellspacing="0">
+<tr bgcolor="#CCCCFF"><th>Methods Detail of SimpleCollection</th><tr>
+</table>
+<a name="PROP_SimpleCollection_add"></a><h3>add</h3><p><small>abstract_collection::<a href="#CLASS_SimpleCollection">SimpleCollection</a>::</small><br/>fun <b>add</b>(E) is abstract</p>
+<blockquote><pre> Add an item in a collection.
+ Ensure col.has(item)
+</pre>
+</blockquote>
+<hr/>
+<a name="PROP_SimpleCollection_add_all"></a><h3>add_all</h3><p><small>abstract_collection::<a href="#CLASS_SimpleCollection">SimpleCollection</a>::</small><br/>fun <b>add_all</b>(<a href="#CLASS_Collection">Collection</a>[E])</p>
+<blockquote><pre> Add each item of `coll`.
+</pre>
+</blockquote>
+</blockquote><hr/>
+</body></html>
